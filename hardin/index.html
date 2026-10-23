@@ -19,43 +19,66 @@
 <body>
 <main>
   <h1>🌱 Hardin ng Salita — Patakaran sa Privacy</h1>
-  <p class="meta">Petsa ng bisa: Oktubre 22, 2026 · Mga app: Hardin ng Salita: English (com.wordgarden.tl.english) at Hardin ng Salita: Korean (com.wordgarden.tl.korean)</p>
+  <p class="meta">Petsa ng bisa: Oktubre 23, 2026 (mula bersyon 1.3) · Mga app: Hardin ng Salita: English (com.wordgarden.tl.english) at Hardin ng Salita: Korean (com.wordgarden.tl.korean)</p>
 
   <section class="card">
     <h2>Sa madaling salita</h2>
     <ul>
-      <li><b>Hindi kami nangongolekta ng personal na impormasyon.</b> Walang account, login, ads, o analytics.</li>
-      <li>Ang iyong progreso ay naka-save <b>sa iyong phone lamang</b> at hindi ipinapadala kahit kanino, kasama na ang developer.</li>
+      <li>Walang account o login. Ang progreso mo ay naka-save <b>sa iyong phone lamang</b>; hindi kumukuha o nag-iimbak ang developer ng personal na impormasyon (gaya ng pangalan o email) sa anumang server.</li>
+      <li>Para manatiling libre ang app, nagpapakita ito ng <b>ads mula sa Google AdMob</b>. Para maipakita at masukat ang ads, maaaring kolektahin at iproseso ng Google ang advertising ID, tinatayang lokasyon (mula sa IP address), impormasyon ng device, at kung nakita o pinindot mo ang ad.</li>
+      <li>Walang ads habang nag-aaral ka. Puwede mong tanggihan ang personalized ads at gagana pa rin ang lahat ng feature.</li>
     </ul>
   </section>
 
   <h2>1. Impormasyong naka-save sa phone</h2>
-  <p>Ang progreso sa pag-aaral (yugto ng bawat salita at oras ng susunod na balik-aral), talaan ng mga araw, mga paborito at settings ay naka-save lamang sa storage ng app sa iyong phone. Hindi ito ipinapadala sa anumang server. Nabubura ito kapag in-uninstall mo ang app o pinindot ang "Burahin ang lahat ng progreso" sa Settings.</p>
+  <p>Ang progreso sa pag-aaral (yugto ng bawat salita at oras ng susunod na balik-aral), talaan ng mga araw, mga paborito, settings at bilang ng naipakitang ads ay naka-save lamang sa storage ng app sa iyong phone. Hindi ito ipinapadala sa server ng developer. Nabubura ito kapag in-uninstall mo ang app o pinindot ang "Burahin ang lahat ng progreso" sa Settings.</p>
 
   <h2>2. Backup file</h2>
   <p>Kapag pinindot mo ang "I-export ang backup", mase-save ang progreso bilang JSON file sa iyong phone. Ikaw ang magpapasya kung saan ito itatago o ibabahagi; hindi ito ipinapadala ng app kahit saan.</p>
 
   <h2>3. Pagbigkas (audio)</h2>
-  <p>Ginagamit ng app ang text-to-speech engine na nasa iyong phone. Ang teksto lang ng salita o pangungusap ang ipinapasa sa engine na iyon. Hindi ginagamit ang mikropono at walang nire-record. Ang engine ay sumusunod sa patakaran ng gumawa nito (hal. Google).</p>
+  <p>Ginagamit ng app ang text-to-speech engine na nasa iyong phone. Ang teksto lang ng salita o pangungusap ang ipinapasa sa engine na iyon. Hindi ginagamit ang mikropono at walang nire-record. Ang engine ay sumusunod sa patakaran ng gumawa nito (hal. Google, Apple).</p>
 
-  <h2>4. Mga pahintulot</h2>
-  <p>Hindi humihingi ang app ng sensitibong pahintulot gaya ng lokasyon, contacts, camera, mikropono o storage.</p>
+  <h2>4. Ads (Google AdMob)</h2>
+  <ul>
+    <li><b>Saan lumalabas:</b> isang banner sa ibaba ng mga pangunahing tab, at paminsan-minsan (hanggang 2 beses bawat araw) isang full-screen ad pagkatapos mong tapusin ang isang aralin. Walang ads habang nag-aaral, sa level test, o sa mga laro.</li>
+    <li><b>Sino ang nagpoproseso:</b> Ang ads ay mula sa AdMob ng Google LLC. Para pumili, magpakita at sumukat ng ads, at para pigilan ang pandaraya, maaaring kolektahin ng Google ang:
+      <ul>
+        <li>advertising ID (Android advertising ID; sa iPhone, ang IDFA kung pinayagan mo lang ang tracking). Kahit hindi mo payagan ang tracking, maaaring gumamit ng identifier na para sa app na ito lang (app set ID sa Android, publisher first-party ID sa iPhone) para sa frequency capping, pagsukat ng ads at pagpigil sa pandaraya.</li>
+        <li>tinatayang lokasyon mula sa IP address</li>
+        <li>impormasyon ng device at app (modelo, OS, wika, bersyon), pakikipag-ugnayan sa ads, at diagnostic na impormasyon</li>
+      </ul>
+    </li>
+    <li><b>Pagproseso sa ibang bansa:</b> Maaaring iproseso ang impormasyong ito sa mga server ng Google (hal. sa Estados Unidos). Basahin ang <a href="https://policies.google.com/privacy">Google Privacy Policy</a> at <a href="https://policies.google.com/technologies/partner-sites">kung paano ginagamit ng Google ang impormasyon mula sa mga app ng partner</a>.</li>
+    <li><b>Rating ng ads:</b> Limitado sa General (G) rating ang lahat ng ads.</li>
+  </ul>
 
-  <h2>5. Ikatlong partido at ads</h2>
-  <p>Hindi namin ibinabahagi o ibinebenta ang anumang personal na impormasyon. Walang ads SDK o analytics SDK sa app.</p>
+  <h2>5. Pagpili tungkol sa personalized ads</h2>
+  <ul>
+    <li><b>iPhone/iPad:</b> Lalabas ang "Allow tracking" na tanong bago maghanda ng ads. Kapag pinili mo ang "Ask App Not to Track", hindi gagamitin ang IDFA. Mababago mo ito sa Settings › Privacy &amp; Security › Tracking.</li>
+    <li><b>Android:</b> Sa Settings › Privacy (o Google) › Ads ng phone, puwede mong i-reset o burahin ang advertising ID.</li>
+    <li><b>EEA, UK, Switzerland at ilang estado sa US:</b> May lalabas na consent screen sa simula, at puwede mo itong baguhin anumang oras sa Settings ng app › "Privacy ng ads".</li>
+    <li>Kahit tanggihan mo ang personalized ads, gagana pa rin ang lahat ng feature; maaaring lumabas ang hindi personalized na ads.</li>
+  </ul>
 
-  <h2>6. Mga bata</h2>
-  <p>Dahil hindi nangongolekta ng personal na impormasyon ang app, hindi rin ito nangongolekta ng impormasyon ng mga bata.</p>
+  <h2>6. Mga pahintulot</h2>
+  <p>Gumagamit ang app ng internet access at ng advertising ID permission ng Android para sa ads. Hindi ito humihingi ng sensitibong pahintulot gaya ng lokasyon, contacts, camera, mikropono o storage.</p>
 
-  <h2>7. Mga pagbabago</h2>
+  <h2>7. Ikatlong partido</h2>
+  <p>Hindi ibinebenta ng developer ang anumang personal na impormasyon. Ang impormasyong may kinalaman sa ads ay direktang kinokolekta at pinoproseso ng Google AdMob gaya ng nasa seksyon 4; hindi ito tinatanggap ng developer nang nakakabit sa iyong pagkakakilanlan.</p>
+
+  <h2>8. Mga bata</h2>
+  <p>Hindi para sa mga bata lamang ang app at hindi kami sadyang nangongolekta ng personal na impormasyon ng mga batang wala pang 13 taong gulang. Limitado sa General (G) rating ang lahat ng ads.</p>
+
+  <h2>9. Mga pagbabago</h2>
   <p>Kapag binago ang patakarang ito, ilalagay namin dito ang bagong bersyon at petsa ng bisa.</p>
 
-  <h2>8. Makipag-ugnayan</h2>
+  <h2>10. Makipag-ugnayan</h2>
   <p>Mga tanong tungkol sa privacy: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
 
   <hr>
   <h2 lang="en">Privacy Policy (English)</h2>
-  <p lang="en">Hardin ng Salita: English and Hardin ng Salita: Korean do not collect, transmit, sell or share any personal data. There are no accounts, ads or analytics. Learning progress and settings are stored only on your device and are deleted when you uninstall the app or reset it in Settings. Backup files are saved only when you choose to export them. Pronunciation uses your device's text-to-speech engine; the microphone is never used. The apps request no sensitive permissions. Contact: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
+  <p lang="en">Hardin ng Salita: English and Hardin ng Salita: Korean have no accounts, and the developer does not collect or store your personal data on any server. Learning progress and settings are stored only on your device and are deleted when you uninstall the app or reset it in Settings. Backup files are saved only when you choose to export them. To keep the apps free, they show Google AdMob ads: a banner at the bottom of the main tabs and, at most twice a day, a full-screen ad after you finish a study session (never while you study, take the level test or play games). To serve and measure ads and prevent fraud, Google may collect your device's advertising identifier (on iOS only if you allow tracking) and, even without tracking permission, an app-scoped identifier (app set ID on Android, publisher first-party ID on iOS) used for frequency capping, ad measurement and fraud prevention, approximate location derived from your IP address, device and app information, ad interactions and diagnostics, which may be processed on Google servers outside your country; see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. You can refuse personalized ads (the iOS tracking prompt, your Android ad settings, or "Privacy ng ads" in the app's Settings where consent is required) and still use every feature. All ads are limited to the General (G) rating. Pronunciation uses your device's text-to-speech engine; the microphone is never used. Contact: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
 </main>
 </body>
 </html>
