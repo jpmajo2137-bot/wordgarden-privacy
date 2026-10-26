@@ -19,6 +19,10 @@
   li { margin:4px 0; }
   a.btn { display:block; margin:12px 0; padding:16px; border-radius:18px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:17px; text-decoration:none; }
   a.btn.alt { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+  #beta { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:6px 22px 14px; margin-top:20px; }
+  #beta h2 { font-size:18px; margin:12px 0 4px; }
+  #beta p, #beta li { font-size:15px; }
+  #beta a { color:var(--leaf); font-weight:700; }
   .meta { color:var(--muted); font-size:13px; margin-top:28px; }
   .meta a { color:var(--muted); }
 </style>
@@ -35,6 +39,15 @@
   </ul>
   <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua kwenye Google Play</a>
   <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6826592575">Pakua kwenye App Store</a>
+  <section id="beta" hidden>
+    <h2>Una simu ya Android?</h2>
+    <p>Bustani bado iko katika majaribio kwenye Google Play. Tunahitaji wajaribu 12 ili tuiweke wazi kwa kila mtu. Ni bure:</p>
+    <ol>
+      <li><a id="beta-group" href="#">Jiunge na kikundi cha wajaribu</a> (tumia akaunti ya Google ileile ya Play Store yako).</li>
+      <li><a id="beta-optin" href="#">Kubali kuwa mjaribu</a>.</li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua Bustani</a> na uifungue kila siku kwa siku 14.</li>
+    </ol>
+  </section>
   <p class="meta"><a href="../support/">Msaada</a> · <a href="../">Sera ya faragha</a></p>
 </main>
 <script>
@@ -43,6 +56,13 @@
     var a = document.getElementById('ios'), b = document.getElementById('play')
     a.className = 'btn'; b.className = 'btn alt'; a.parentNode.insertBefore(a, b)
   }
+  // Wajaribu wa Android: kikundi na kiungo vinatoka kwenye beta.json (huzimwa programu ikishakuwa wazi)
+  fetch('../beta.json?_t=' + Date.now()).then(function (r) { return r.ok ? r.json() : null }).then(function (c) {
+    if (!c || c.active !== true || !/^https:\/\/groups\.google\.com\//.test(c.group) || !/^https:\/\/play\.google\.com\//.test(c.optIn)) return
+    document.getElementById('beta-group').href = c.group
+    document.getElementById('beta-optin').href = c.optIn
+    document.getElementById('beta').hidden = false
+  }).catch(function () {})
 </script>
 </body>
 </html>
