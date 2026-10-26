@@ -41,11 +41,11 @@
   <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6826592575">Pakua kwenye App Store</a>
   <section id="beta" hidden>
     <h2>Una simu ya Android?</h2>
-    <p>Bustani bado iko katika majaribio kwenye Google Play. Tunahitaji wajaribu 12 ili tuiweke wazi kwa kila mtu. Ni bure:</p>
+    <p>Bustani bado iko katika majaribio kwenye Google Play. Tunahitaji watumiaji wa majaribio 12 ili tuifungue kwa kila mtu. Ni bure:</p>
     <ol>
-      <li><a id="beta-group" href="#">Jiunge na kikundi cha wajaribu</a> (tumia akaunti ya Google ileile ya Play Store yako).</li>
-      <li><a id="beta-optin" href="#">Kubali kuwa mjaribu</a>.</li>
-      <li><a href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua Bustani</a> na uifungue kila siku kwa siku 14.</li>
+      <li><a id="beta-group" href="#">Jiunge na kikundi cha majaribio</a> (tumia akaunti ileile ya Google unayotumia kwenye Play Store).</li>
+      <li><a id="beta-optin" href="#">Fungua ukurasa wa majaribio</a> na ubonyeze “Become a tester”.</li>
+      <li><a href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua Bustani</a> na uitumie kwa siku 14. Usitoke kwenye kikundi katika siku hizo.</li>
     </ol>
   </section>
   <p class="meta"><a href="../support/">Msaada</a> · <a href="../">Sera ya faragha</a></p>
@@ -58,7 +58,7 @@
   }
   // Wajaribu wa Android: kikundi na kiungo vinatoka kwenye beta.json (huzimwa programu ikishakuwa wazi)
   fetch('../beta.json?_t=' + Date.now()).then(function (r) { return r.ok ? r.json() : null }).then(function (c) {
-    if (!c || c.active !== true || !/^https:\/\/groups\.google\.com\//.test(c.group) || !/^https:\/\/play\.google\.com\//.test(c.optIn)) return
+    if (!c || c.active !== true || !/^https:\/\/groups\.google\.com\/g\//.test(c.group) || c.optIn !== 'https://play.google.com/apps/testing/com.wordgarden.sw') return
     document.getElementById('beta-group').href = c.group
     document.getElementById('beta-optin').href = c.optIn
     document.getElementById('beta').hidden = false
