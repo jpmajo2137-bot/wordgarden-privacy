@@ -4,64 +4,93 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bustani ya Maneno — Pakua</title>
-<meta name="description" content="Jifunze Kiingereza na Kikorea kwa Kiswahili. Bure, hata bila intaneti.">
+<meta name="description" content="Jifunze Kiingereza na Kikorea kwa Kiswahili, bila mwalimu na hata bila intaneti. Maneno 30,000+, hadithi, michezo na Methali ya leo.">
+<link rel="canonical" href="https://jpmajo2137-bot.github.io/wordgarden-privacy/bustani/app/">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jpmajo2137-bot.github.io/wordgarden-privacy/bustani/app/">
+<meta property="og:site_name" content="Bustani ya Maneno">
 <meta property="og:title" content="Bustani ya Maneno: Kiingereza na Kikorea">
-<meta property="og:description" content="Jifunze Kiingereza na Kikorea kwa Kiswahili — maneno 30,000+, hadithi na michezo. Bure.">
+<meta property="og:description" content="Jifunze Kiingereza na Kikorea kwa Kiswahili, bila mwalimu na hata bila intaneti. Maneno 30,000+, hadithi na michezo.">
+<meta property="og:image" content="https://jpmajo2137-bot.github.io/wordgarden-privacy/bustani/app/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Bustani ya Maneno: Kiingereza na Kikorea, jifunze kwa Kiswahili">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --leaf-ink:#fff; --card:#fffdf7; --line:#e2dac3; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --leaf-ink:#0e1712; --card:#15231b; --line:#2a4234; } }
   body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
   main { max-width:480px; margin:0 auto; padding:48px 20px 56px; text-align:center; }
-  .logo { font-size:64px; line-height:1; }
+  .logo { width:88px; height:88px; border-radius:22px; }
   h1 { font-size:28px; margin:12px 0 4px; }
   p.sub { color:var(--muted); margin:0 0 24px; }
   ul { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px 22px 14px 40px; margin:0 0 28px; }
   li { margin:4px 0; }
-  a.btn { display:block; margin:12px 0; padding:16px; border-radius:18px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:17px; text-decoration:none; }
-  a.btn.alt { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+  .btn { display:block; margin:12px 0; padding:16px; border-radius:18px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:17px; text-decoration:none; }
+  .btn.alt { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+  .btn.soon { background:transparent; color:var(--muted); border:1px dashed var(--line); font-weight:700; }
   #beta { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:6px 22px 14px; margin-top:20px; }
   #beta h2 { font-size:18px; margin:12px 0 4px; }
   #beta p, #beta li { font-size:15px; }
+  #beta li { margin:8px 0; }
   #beta a { color:var(--leaf); font-weight:700; }
+  #beta .tip { color:var(--muted); font-size:14px; }
   .meta { color:var(--muted); font-size:13px; margin-top:28px; }
   .meta a { color:var(--muted); }
 </style>
 </head>
 <body>
 <main>
-  <div class="logo">🌱</div>
+  <img class="logo" src="icon.png" alt="">
   <h1>Bustani ya Maneno</h1>
   <p class="sub">Jifunze Kiingereza 🇬🇧 na Kikorea 🇰🇷 kwa Kiswahili</p>
   <ul>
-    <li>Maneno zaidi ya 30,000 — kuanzia mwanzo hadi ngazi ya juu</li>
-    <li>Hadithi, michezo na kipimo cha msamiati</li>
-    <li>Inafanya kazi hata bila intaneti · Ni bure</li>
+    <li>Maneno zaidi ya 30,000, kila neno na maana, mfano na kidokezo kwa Kiswahili</li>
+    <li>Kipimo cha msamiati, hadithi, michezo 3 na Methali ya leo</li>
+    <li>Kikorea tangu herufi ya kwanza: Misingi ya Hangul na Soma maneno</li>
+    <li>Inafanya kazi hata bila intaneti · Huhitaji akaunti · Ni bure</li>
   </ul>
-  <a class="btn" id="play" href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua kwenye Google Play</a>
-  <a class="btn alt" id="ios" href="https://apps.apple.com/app/id6826592575">Pakua kwenye App Store</a>
-  <section id="beta" hidden>
+  <!-- Wakati wa majaribio ya Android (beta.json active) kitufe cha Play kinapeleka kwenye maelekezo hapa chini;
+       programu ikiwa wazi kwa wote (active:false) kinapeleka moja kwa moja kwenye Google Play. -->
+  <a class="btn" id="play" href="#beta">Jaribu sasa kwenye Android (majaribio)</a>
+  <!-- App Store: inaonyeshwa "inakuja" mpaka programu ipatikane (inakaguliwa kwa itunes lookup) -->
+  <span class="btn soon" id="ios">App Store (iPhone): inakuja hivi karibuni</span>
+  <section id="beta">
     <h2>Una simu ya Android?</h2>
     <p>Bustani bado iko katika majaribio kwenye Google Play. Tunahitaji watumiaji wa majaribio 12 ili tuifungue kwa kila mtu. Ni bure:</p>
     <ol>
-      <li><a id="beta-group" href="#">Jiunge na kikundi cha majaribio</a> (tumia akaunti ileile ya Google unayotumia kwenye Play Store).</li>
-      <li><a id="beta-optin" href="#">Fungua ukurasa wa majaribio</a> na ubonyeze “Become a tester”.</li>
+      <li><a id="beta-group" href="https://groups.google.com/g/bustani-ya-maneno-testers">Jiunge na kikundi cha majaribio</a>. Ingia (Sign in) kwa akaunti ileile ya Google unayotumia kwenye Play Store, kisha bonyeza “Join group”.</li>
+      <li><a id="beta-optin" href="https://play.google.com/apps/testing/com.wordgarden.sw">Fungua ukurasa wa majaribio</a> na ubonyeze “Become a tester”.</li>
       <li><a href="https://play.google.com/store/apps/details?id=com.wordgarden.sw">Pakua Bustani</a> na uitumie kwa siku 14. Usitoke kwenye kikundi katika siku hizo.</li>
     </ol>
+    <p class="tip">Ukiona “You don't have permission”, hujaingia kwenye akaunti ya Google: bonyeza Sign in juu ya ukurasa, kisha ufungue kiungo cha kikundi tena.</p>
   </section>
   <p class="meta"><a href="../support/">Msaada</a> · <a href="../">Sera ya faragha</a></p>
 </main>
 <script>
-  // Weka kitufe cha simu yako juu (Android → Google Play, iPhone → App Store)
-  if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    var a = document.getElementById('ios'), b = document.getElementById('play')
-    a.className = 'btn'; b.className = 'btn alt'; a.parentNode.insertBefore(a, b)
-  }
-  // Wajaribu wa Android: kikundi na kiungo vinatoka kwenye beta.json (huzimwa programu ikishakuwa wazi)
-  fetch('../beta.json?_t=' + Date.now()).then(function (r) { return r.ok ? r.json() : null }).then(function (c) {
-    if (!c || c.active !== true || !/^https:\/\/groups\.google\.com\/g\//.test(c.group) || c.optIn !== 'https://play.google.com/apps/testing/com.wordgarden.sw') return
-    document.getElementById('beta-group').href = c.group
-    document.getElementById('beta-optin').href = c.optIn
-    document.getElementById('beta').hidden = false
+  var PLAY = 'https://play.google.com/store/apps/details?id=com.wordgarden.sw'
+  var play = document.getElementById('play'), ios = document.getElementById('ios')
+  // Wajaribu wa Android: kikundi na kiungo vinatoka kwenye beta.json. Ikiwa imezimwa (programu iko wazi), ficha maelekezo
+  fetch('../beta.json?_t=' + Date.now()).then(function (r) { return r.ok ? r.json() : { active: false } }).then(function (c) {
+    if (c && c.active === true && /^https:\/\/groups\.google\.com\/g\//.test(c.group) && c.optIn === 'https://play.google.com/apps/testing/com.wordgarden.sw') {
+      document.getElementById('beta-group').href = c.group
+      document.getElementById('beta-optin').href = c.optIn
+      return
+    }
+    document.getElementById('beta').hidden = true
+    play.href = PLAY
+    play.textContent = 'Pakua kwenye Google Play'
+  }).catch(function () {})
+  // App Store: kitufe kinakuwa kiungo programu ikishapatikana
+  fetch('https://itunes.apple.com/lookup?id=6826592575').then(function (r) { return r.json() }).then(function (j) {
+    if (!j || !j.resultCount) return
+    var a = document.createElement('a')
+    a.className = 'btn alt'; a.id = 'ios'; a.href = 'https://apps.apple.com/app/id6826592575'; a.textContent = 'Pakua kwenye App Store'
+    ios.parentNode.replaceChild(a, ios); ios = a
+    // iPhone: weka App Store juu
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) { a.className = 'btn'; play.className = 'btn alt'; a.parentNode.insertBefore(a, play) }
   }).catch(function () {})
 </script>
 </body>
