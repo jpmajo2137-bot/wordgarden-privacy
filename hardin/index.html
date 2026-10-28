@@ -7,7 +7,7 @@
 <style>
   :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#2f8a4c; --card:#fffdf7; --line:#e2dac3; }
   @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --card:#15231b; --line:#2a4234; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; }
   main { max-width:720px; margin:0 auto; padding:40px 20px 64px; }
   h1 { font-size:28px; margin:0 0 4px; } h2 { font-size:19px; margin:32px 0 8px; color:var(--leaf); }
   .meta { color:var(--muted); font-size:14px; margin:0 0 24px; }
@@ -19,7 +19,7 @@
 <body>
 <main>
   <h1>🌱 Hardin ng Salita — Patakaran sa Privacy</h1>
-  <p class="meta">Petsa ng bisa: Oktubre 25, 2026 (mula bersyon 1.4) · Mga app: Hardin ng Salita: English (com.wordgarden.tl.english) at Hardin ng Salita: Korean (com.wordgarden.tl.korean)</p>
+  <p class="meta">Petsa ng bisa: Oktubre 28, 2026 · Mga app: <b>Hardin ng Salita: English</b> (Google Play: “Hardin: English Tagalog Vocab” · App Store: “Hardin ng Salita: English” · com.wordgarden.tl.english) at <b>Hardin ng Salita: Korean</b> (Google Play: “Hardin: EPS TOPIK Korean Vocab” · App Store: “Learn Korean: Hardin ng Salita” · com.wordgarden.tl.korean) · Developer: Joung Hun Park (박종훈)</p>
 
   <section class="card">
     <h2>Sa madaling salita</h2>
@@ -36,8 +36,9 @@
   <p><b>Awtomatikong backup:</b> Sa Android at iPhone app, nagse-save din ang app ng isa pang kopya ng progreso mo sa sariling folder ng app sa phone (kasama ang naunang kopyang ginagamit ng "Ibalik sa dati" sa Settings), para hindi ito mawala kapag naubos ang storage o nasira ang data ng app. Hindi mo nakikita ang file na ito at hindi ito ipinapadala ng app palabas ng phone. Pero kung naka-on ang backup ng phone mo (iCloud Backup o backup ng Android/Google), maaaring maisama roon ang storage ng app at ang awtomatikong backup; ang backup na iyon ay sumusunod sa settings ng iyong Apple o Google account.</p>
   <p>Hindi ipinapadala ang alinman dito sa server ng developer. Nabubura ang lahat ng ito, kasama ang awtomatikong backup, kapag in-uninstall mo ang app. Kapag pinindot mo ang "Burahin ang lahat ng progreso" sa Settings, nabubura ang progreso, settings at awtomatikong backup, at hindi na ito maibabalik (maaaring maiwan ang mga backup file na ikaw mismo ang nag-export at maliliit na talaan gaya ng bilang ng naipakitang ads). Ang mga backup ng phone sa iCloud o Google na nagawa bago nito ay pinamamahalaan ayon sa settings ng serbisyong iyon.</p>
 
-  <h2>2. Backup file</h2>
+  <h2>2. Backup file at pagbabahagi</h2>
   <p>Kapag pinindot mo ang "I-export ang backup", mase-save ang progreso bilang JSON file sa iyong phone. Ikaw ang magpapasya kung saan ito itatago o ibabahagi; hindi ito ipinapadala ng app kahit saan.</p>
+  <p>Kapag pinindot mo ang "Ibahagi ang resulta" sa level test o ang button para ibahagi ang app sa kaibigan, bubukas ang share screen ng phone mo, at ikaw ang pipili kung ano at kanino ipapadala. Mula bersyon 1.6, may link ang mensahe papunta sa download page ng app. Hindi ipinapadala ng app sa developer ang ibinahagi mo.</p>
 
   <h2>3. Pagbigkas (audio)</h2>
   <p>Ginagamit ng app ang text-to-speech engine na nasa iyong phone. Ang teksto lang ng salita o pangungusap ang ipinapasa sa engine na iyon. Hindi ginagamit ang mikropono at walang nire-record. Ang engine ay sumusunod sa patakaran ng gumawa nito (hal. Google, Apple).</p>
@@ -52,7 +53,8 @@
         <li>impormasyon ng device at app (modelo, OS, wika, bersyon), pakikipag-ugnayan sa ads, at diagnostic na impormasyon</li>
       </ul>
     </li>
-    <li><b>Pagproseso sa ibang bansa:</b> Maaaring iproseso ang impormasyong ito sa mga server ng Google (hal. sa Estados Unidos). Basahin ang <a href="https://policies.google.com/privacy">Google Privacy Policy</a> at <a href="https://policies.google.com/technologies/partner-sites">kung paano ginagamit ng Google ang impormasyon mula sa mga app ng partner</a>.</li>
+    <li><b>Paano kinokolekta:</b> Tuwing hihingi ng ad ang app, kusang kinokolekta at ipinapadala ito sa Google ng Google ads SDK na nasa loob ng app.</li>
+    <li><b>Gaano katagal itinatago:</b> Ayon sa itinakda ng Google. Basahin ang <a href="https://policies.google.com/technologies/retention">kung paano nagtatago ng data ang Google</a>.</li>
     <li><b>Rating ng ads:</b> Limitado sa General (G) rating ang lahat ng ads.</li>
   </ul>
 
@@ -60,32 +62,81 @@
   <ul>
     <li><b>iPhone/iPad:</b> Lalabas ang "Allow tracking" na tanong bago maghanda ng ads. Kapag pinili mo ang "Ask App Not to Track", hindi gagamitin ang IDFA. Mababago mo ito sa Settings › Privacy &amp; Security › Tracking.</li>
     <li><b>Android:</b> Sa Settings › Privacy (o Google) › Ads ng phone, puwede mong i-reset o burahin ang advertising ID.</li>
-    <li><b>EEA, UK, Switzerland at ilang estado sa US:</b> May lalabas na consent screen sa simula, at puwede mo itong baguhin anumang oras sa Settings ng app › "Privacy ng ads".</li>
+    <li><b>EEA, UK at Switzerland:</b> Bago unang maghanda ng ads, lalabas ang consent screen ng Google, at puwede mo itong baguhin anumang oras sa Settings ng app › "Privacy ng ads".</li>
+    <li><b>Ilang estado sa US na may batas sa privacy:</b> Walang consent screen sa simula. Kung makikita mo ang "Privacy ng ads" sa Settings ng app, doon ka puwedeng tumanggi (opt out) sa pagbebenta o pagbabahagi ng data mo para sa personalized ads.</li>
     <li>Kahit tanggihan mo ang personalized ads, gagana pa rin ang lahat ng feature; maaaring lumabas ang hindi personalized na ads.</li>
   </ul>
 
   <h2>6. Mga pahintulot</h2>
   <p>Gumagamit ang app ng internet access at ng advertising ID permission ng Android para sa ads, at ng vibrate permission ng Android para sa vibration kapag mali ang sagot o may pinindot na button. Kasama rin sa Google ads SDK ang WAKE_LOCK permission ng Android.</p>
-  <p><b>Notifications (opsyonal):</b> Hihingi lang ang app ng pahintulot para sa notifications (notification permission sa Android 13 pataas, "Allow Notifications" sa iPhone/iPad) kapag binuksan mo ang "Paalala sa pag-aaral" sa Settings o sa card sa tab na Hardin. Kahit hindi mo ito payagan, gagana pa rin ang lahat ng iba pang feature, at puwede mo itong i-off anumang oras sa Settings ng app o ng phone. Sa phone mo lang naka-iskedyul ang mga paalala (ilang salita ang didiligan, ilang bagong binhi, at ang sunod-sunod mong araw); walang impormasyong ipinapadala sa developer o sa ibang server para rito. Sa Android, gumagamit din ang paalala ng RECEIVE_BOOT_COMPLETED permission (para tumunog pa rin ang paalala pagkatapos i-restart ang phone). Hindi ito gumagamit ng exact alarm permission.</p>
+  <p><b>Notifications (opsyonal):</b> Hihingi lang ang app ng pahintulot para sa notifications (notification permission sa Android 13 pataas, "Allow Notifications" sa iPhone/iPad) kapag binuksan mo ang "Paalala sa pag-aaral" sa Settings o sa card sa tab na Hardin. Kahit hindi mo ito payagan, gagana pa rin ang lahat ng iba pang feature, at puwede mo itong i-off anumang oras sa Settings ng app o ng phone. Sa phone mo lang naka-iskedyul ang mga paalala (ilang salita ang didiligan, ilang bagong binhi, ang sunod-sunod mong araw at ang pandilig, at kung minsan ay isang salitang dapat mong balikan sa araw na iyon); walang impormasyong ipinapadala sa developer o sa ibang server para rito. Sa Android, gumagamit din ang paalala ng RECEIVE_BOOT_COMPLETED permission (para tumunog pa rin ang paalala pagkatapos i-restart ang phone). Hindi ito gumagamit ng exact alarm permission.</p>
   <p>Sa iPhone/iPad, dalawang bagay ang maaaring itanong ng app: ang "Allow tracking" para sa ads, at ang "Allow Notifications" kapag binuksan mo ang paalala.</p>
   <p>Sa Android at iPhone/iPad, hindi humihingi ang app ng sensitibong pahintulot gaya ng lokasyon, contacts, camera, mikropono o storage.</p>
 
-  <h2>7. Ikatlong partido</h2>
+  <h2>7. Ikatlong partido at paglipat sa ibang bansa</h2>
   <p>Hindi ibinebenta ng developer ang anumang personal na impormasyon. Ang impormasyong may kinalaman sa ads ay direktang kinokolekta at pinoproseso ng Google AdMob gaya ng nasa seksyon 4; hindi ito tinatanggap ng developer nang nakakabit sa iyong pagkakakilanlan.</p>
+  <ul>
+    <li><b>Tumatanggap:</b> Google LLC (Estados Unidos). Para makipag-ugnayan, tingnan ang <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+    <li><b>Ano at para saan:</b> ang impormasyong nasa seksyon 4, para sa pagpapakita at pagsukat ng ads at pagpigil sa pandaraya</li>
+    <li><b>Saan:</b> sa mga server ng Google sa Estados Unidos at iba pang bansa</li>
+    <li><b>Kailan at paano:</b> tuwing hihingi ng ad ang app, sa naka-encrypt na koneksiyon</li>
+    <li><b>Gaano katagal:</b> ayon sa itinakda ng Google (seksyon 4)</li>
+    <li><b>Paano tumanggi:</b> Para sa personalized ads, tingnan ang seksyon 5. Kung ayaw mong may maipadala para sa ads, puwede mong gamitin ang app nang walang internet; nasa loob ng app ang lahat ng salita at kuwento.</li>
+  </ul>
+  <p>Basahin din kung <a href="https://policies.google.com/technologies/partner-sites">paano ginagamit ng Google ang impormasyon mula sa mga app ng partner</a>.</p>
 
   <h2>8. Mga bata</h2>
-  <p>Hindi para sa mga bata lamang ang app at hindi kami sadyang nangongolekta ng personal na impormasyon ng mga batang wala pang 13 taong gulang. Limitado sa General (G) rating ang lahat ng ads.</p>
+  <p>Hindi para sa mga bata lamang ang app at hindi kami sadyang nangongolekta ng personal na impormasyon ng mga batang wala pang 13 taong gulang (wala pang 14 sa Korea). Limitado sa General (G) rating ang lahat ng ads.</p>
 
-  <h2>9. Mga pagbabago</h2>
+  <h2>9. Gaano katagal itinatago at paano binubura</h2>
+  <ul>
+    <li><b>Impormasyon sa phone</b> (seksyon 1 at 2): nasa phone mo lang ito hanggang i-uninstall mo ang app o pindutin ang "Burahin ang lahat ng progreso"; doon ito nabubura. Ikaw ang namamahala sa mga backup file na ini-export mo at sa backup ng phone mo.</li>
+    <li><b>Mga email</b> (puna, tanong, pagsali sa beta test): itinatago lang hangga't kailangan para sumagot o maasikaso ang hiling mo, at binubura agad kapag hiniling mo. Ang Google account address na ipinadala mo para sumali sa beta test ay gagamitin lang para maidagdag ka sa listahan ng mga tester, at aalisin ito kapag tapos na ang test o kapag hiniling mo.</li>
+    <li><b>Impormasyon para sa ads:</b> itinatago ng Google ayon sa itinakda nito (seksyon 4).</li>
+    <li><b>Paano binubura:</b> Permanenteng binubura ang mga email at ang listahan mula sa inbox at sa listahan.</li>
+  </ul>
+
+  <h2>10. Pag-iingat sa data</h2>
+  <ul>
+    <li>Walang server ang developer na nag-iimbak ng personal na impormasyon.</li>
+    <li>Naka-save ang progreso mo sa sariling storage ng app, na pinoprotektahan ng operating system mula sa ibang app.</li>
+    <li>Ipinapadala ng Google ads SDK ang data sa naka-encrypt na koneksiyon (HTTPS).</li>
+    <li>Nasa email account na ang developer lang ang namamahala ang mga email na natanggap.</li>
+  </ul>
+
+  <h2>11. Mga karapatan mo</h2>
+  <ul>
+    <li>Ang tanging personal na impormasyong hawak ng developer ay ang mga email na ipinadala mo. Puwede mong hilingin sa email (seksyon 12) na makita, itama, burahin, o itigil ang paggamit nito, at aasikasuhin namin ito agad.</li>
+    <li>Ang progreso sa phone ay makikita mo sa app (tab na Talaan), mai-export ("I-export ang backup") at mabubura ("Burahin ang lahat ng progreso", o i-uninstall ang app).</li>
+    <li>Para sa ads: gamitin ang mga paraan sa seksyon 5 para bawiin ang pahintulot o i-reset o burahin ang advertising ID. Para sa impormasyong naproseso na ng Google: kung may Google account ka, gamitin ang <a href="https://myadcenter.google.com/">My Ad Center</a> at ang mga data control ng Google account mo; kung wala, sundin ang paraan sa <a href="https://policies.google.com/privacy">Google Privacy Policy</a> para direktang humiling sa Google.</li>
+  </ul>
+
+  <h2>12. Developer at makipag-ugnayan</h2>
+  <p>Developer at taong responsable sa privacy: <b>Joung Hun Park (박종훈)</b>, independent developer · <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
+  <p>Kapag pinindot mo ang "Mag-email" sa "Magpadala ng puna" sa Settings, bubukas ang sarili mong email app na may nakalagay nang address at subject (pangalan, bersyon at edisyon ng app). Mula bersyon 1.6, para mas mabilis maayos ang problema, maaaring nakalagay na rin sa email ang bersyon ng app, impormasyon ng phone at OS, at ang mga error ng app sa nakaraang 14 na araw; kapag nag-ulat ka ng mali sa isang salita, nakalagay ang kahulugan at halimbawa ng salitang iyon. Hindi kailanman isinasama ang progreso mo o ang advertising ID, at makikita at mabubura mo ang lahat bago ipadala. Ikaw ang magpapasya kung ipapadala mo ito. Gagamitin lang namin ang mensahe at email address mo para sumagot; hindi namin ito gagamitin sa ibang layunin o ibibigay sa iba.</p>
+
+  <h2>13. Kung may reklamo</h2>
+  <ul>
+    <li>Sa Pilipinas: National Privacy Commission (<a href="https://privacy.gov.ph">privacy.gov.ph</a>)</li>
+    <li>Kung nasa Korea ka: Personal Information Infringement Report Center (<a href="https://privacy.kisa.or.kr">privacy.kisa.or.kr</a>, tawag sa 118) at Personal Information Dispute Mediation Committee (<a href="https://www.kopico.go.kr">www.kopico.go.kr</a>)</li>
+  </ul>
+
+  <h2>14. Ang website na ito</h2>
+  <p>Hindi gumagamit ng cookies o analytics ang site na ito (privacy, support at download page). Naka-host ito sa GitHub Pages, at itinatala ng GitHub ang IP address ng mga bisita para sa seguridad. Para malaman kung nasa App Store na ang app, nagtatanong ang download page sa Apple (itunes.apple.com) mula sa browser mo.</p>
+
+  <h2>15. Mga pagbabago</h2>
   <p>Kapag binago ang patakarang ito, ilalagay namin dito ang bagong bersyon at petsa ng bisa.</p>
-
-  <h2>10. Makipag-ugnayan</h2>
-  <p>Mga tanong tungkol sa privacy: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
-  <p>Kapag pinindot mo ang "Mag-email" sa "Magpadala ng puna" sa Settings, bubukas ang sarili mong email app na may nakalagay nang address at subject (pangalan, bersyon at edisyon ng app). Ikaw ang magpapasya kung ipapadala mo ito. Gagamitin lang namin ang mensahe at email address mo para sumagot; hindi namin ito gagamitin sa ibang layunin o ibibigay sa iba.</p>
 
   <hr>
   <h2 lang="en">Privacy Policy (English)</h2>
-  <p lang="en">Hardin ng Salita: English and Hardin ng Salita: Korean have no accounts, and the developer does not collect or store your personal data on any server. Learning progress and settings are stored only on your device. The apps also keep an automatic backup copy of your progress in the app's private folder on the device, so it can be recovered if the phone runs low on space or the app's saved data gets damaged; the apps never send it off the device, although it may be included in your own iCloud or Android device backup if you have turned that on. Everything, including the automatic backup, is deleted when you uninstall the app; "Burahin ang lahat ng progreso" (reset all progress) in Settings deletes your progress, settings and the automatic backup. A backup file you can keep or share is created only when you choose to export it. Daily study reminders ("Paalala sa pag-aaral") are optional: the apps ask for notification permission only when you turn them on, and reminders are scheduled on your device only, without sending any data to a server. On iPhone and iPad the apps may ask for two permissions: tracking (for ads) and notifications (only if you turn on reminders). If you email us, including with "Magpadala ng puna" (Send feedback) in Settings, which opens your own mail app, we use your email address and message only to reply. To keep the apps free, they show Google AdMob ads: a banner at the bottom of the main tabs and, at most twice a day, a full-screen ad after you finish a study session (never while you study, take the level test or play games). To serve and measure ads and prevent fraud, Google may collect your device's advertising identifier (on iOS only if you allow tracking) and, even without tracking permission, an app-scoped identifier (app set ID on Android, publisher first-party ID on iOS) used for frequency capping, ad measurement and fraud prevention, approximate location derived from your IP address, device and app information, ad interactions and diagnostics, which may be processed on Google servers outside your country; see <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>. You can refuse personalized ads (the iOS tracking prompt, your Android ad settings, or "Privacy ng ads" in the app's Settings where consent is required) and still use every feature. All ads are limited to the General (G) rating. Pronunciation uses your device's text-to-speech engine; the microphone is never used. Contact: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
+  <div lang="en">
+  <p>Hardin ng Salita: English (on Google Play "Hardin: English Tagalog Vocab") and Hardin ng Salita: Korean (on Google Play "Hardin: EPS TOPIK Korean Vocab", on the App Store "Learn Korean: Hardin ng Salita") are made by Joung Hun Park (박종훈), an independent developer, who is also the person responsible for privacy: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a>.</p>
+  <p><b>On your device.</b> The apps have no accounts, and the developer does not collect or store your personal data on any server. Learning progress and settings are stored only on your device, in the app's private storage, which the operating system protects from other apps. The apps also keep an automatic backup copy of your progress in the app's private folder on the device, so it can be recovered if the phone runs low on space or the app's saved data gets damaged; the apps never send it off the device, although it may be included in your own iCloud or Android device backup if you have turned that on. This data stays until you uninstall the app or use "Burahin ang lahat ng progreso" (reset all progress) in Settings, which deletes your progress, settings and the automatic backup. A backup file you can keep or share is created only when you choose to export it. Daily study reminders ("Paalala sa pag-aaral") are optional: the apps ask for notification permission only when you turn them on, and reminders are scheduled on your device only, without sending any data to a server. On iPhone and iPad the apps may ask for two permissions: tracking (for ads) and notifications (only if you turn on reminders). When you share a result or the app, your phone's share sheet opens and you choose what to send; from version 1.6 the message contains a link to the app's download page, and the app does not send it to the developer.</p>
+  <p><b>Ads.</b> To keep the apps free, they show Google AdMob ads: a banner at the bottom of the main tabs and, at most twice a day, a full-screen ad after you finish a study session (never while you study, take the level test or play games). To serve and measure ads and prevent fraud, Google may collect your device's advertising identifier (on iOS only if you allow tracking) and, even without tracking permission, an app-scoped identifier (app set ID on Android, publisher first-party ID on iOS) used for frequency capping, ad measurement and fraud prevention, approximate location derived from your IP address, device and app information, ad interactions and diagnostics. The Google ads SDK sends this over an encrypted connection each time the app requests an ad, to Google LLC servers in the United States and other countries. Google processes it under <a href="https://policies.google.com/privacy">its own Privacy Policy</a> and ad terms, and keeps it for the periods described in <a href="https://policies.google.com/technologies/retention">Google's retention policy</a>. The developer does not sell personal data and does not receive ad data linked to you. All ads are limited to the General (G) rating.</p>
+  <p><b>Your choices.</b> You can refuse personalized ads and still use every feature: the iOS tracking prompt, your Android ad settings (reset or delete the advertising ID), and, in the EEA, the UK and Switzerland, Google's consent form, which appears before ads are first loaded and can be changed any time in Settings › "Privacy ng ads". In US states with privacy laws no consent form appears at launch; where the "Privacy ng ads" row appears in Settings, you can use it to opt out of the sale or sharing of your data for personalized ads. To manage ad data Google already holds, use <a href="https://myadcenter.google.com/">My Ad Center</a> and your Google Account's data controls, or ask Google as described in its Privacy Policy. If you don't want any data sent for ads, you can use the apps offline: all words and stories are inside the app.</p>
+  <p><b>Email.</b> If you email us, including with "Magpadala ng puna" (Send feedback) in Settings, which opens your own mail app, we use your email address and message only to reply, keep them only as long as needed, and delete them when you ask. From version 1.6 the draft may also contain the app version, phone and OS information and the app's errors from the last 14 days, and a word report contains that word's meaning and example; it never contains your progress or advertising identifier, and you can read and delete everything before sending. A Google account address you send to join the beta test is used only to add you to the tester list and is removed when the test ends or when you ask. You can ask to see, correct or delete what we hold at any time. Complaints: the National Privacy Commission in the Philippines (privacy.gov.ph); in Korea, the Personal Information Infringement Report Center (privacy.kisa.or.kr, 118).</p>
+  <p><b>This website.</b> These pages use no cookies or analytics. They are hosted on GitHub Pages, and GitHub logs visitors' IP addresses for security. The download pages ask Apple (itunes.apple.com) from your browser whether the app is on the App Store. Pronunciation uses your device's text-to-speech engine; the microphone is never used. Contact: <a href="mailto:jpmajo2137@gmail.com">jpmajo2137@gmail.com</a></p>
+  </div>
 </main>
 </body>
 </html>
