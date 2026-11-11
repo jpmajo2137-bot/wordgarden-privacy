@@ -23,10 +23,6 @@
 </head>
 <body>
 <main>
-  <!-- WITH-ADS version (AdMob), copied from index-with-ads.html for the launch with ads (owner decision 2026-10-31).
-       Before publishing, re-check it against src/lib/ads.ts in that release (banner position, at most 2 full-screen ads per study day,
-       none on the first study day, at least 10 minutes apart, only after a session with at least 8 answers, G rating, UMP before ATT), the Settings row name "Ad privacy" (set.adPrivacy)
-       and the permission list of that build's merged manifest (section 6). -->
   <h1>🌱 WordGarden: Korean — Privacy Policy</h1>
   <p class="meta">Effective date: October 31, 2026 · App: <b>WordGarden: Korean</b> (com.wordgarden.en.korean; home-screen name “WordGarden”) for Android and iPhone/iPad, whatever name it is listed under on Google Play or the App Store · Developer: Joung Hun Park (박종훈)</p>
 
@@ -81,7 +77,6 @@
   </ul>
 
   <h2>6. Permissions</h2>
-  <!-- Check against the merged manifest of the release that turns ads on (web/README.md §5) -->
   <p><b>Android:</b> The app itself uses internet access (INTERNET), for ads (learning works offline; links you tap, such as this policy, email or the app store, open in a browser or another app), and the vibration permission (VIBRATE), for a short buzz when you answer wrong or tap a button. The reminder (notification) library adds the notification permission (POST_NOTIFICATIONS, on Android 13 and later, asked only when you turn on reminders), and RECEIVE_BOOT_COMPLETED and WAKE_LOCK so reminders still arrive while the phone is idle or after it restarts. Google's ads library (Google Mobile Ads SDK) adds the advertising ID permission (AD_ID); ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION and ACCESS_ADSERVICES_TOPICS (Android's ad services); the network state permission (ACCESS_NETWORK_STATE); and FOREGROUND_SERVICE, through the background-task library it uses (androidx.work). The app does not use the exact-alarm permission.</p>
   <p><b>iPhone/iPad:</b> The app may ask two things: whether to allow tracking for ads (section 5), and “Allow Notifications” when you turn on reminders.</p>
   <p>On both, the app does not request sensitive permissions such as location, contacts, camera, microphone or storage.</p>

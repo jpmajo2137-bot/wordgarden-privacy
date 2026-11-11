@@ -23,12 +23,7 @@
 </head>
 <body>
 <main>
-  <!-- Bản CÓ quảng cáo (AdMob), chép từ index-with-ads.html (2026-10-31). Chỉ đăng cùng lúc với phiên bản có quảng cáo của CẢ HAI ứng dụng Vườn Từ (chính sách dùng chung).
-       Trước khi đăng, so lại với src/lib/ads.ts của bản đó (vị trí banner, tối đa 2 quảng cáo toàn màn hình mỗi ngày học, không có ở ngày học đầu tiên,
-       cách nhau ít nhất 10 phút, chỉ sau buổi học có ít nhất 8 câu trả lời, mức nội dung G, thứ tự UMP → ATT), với tên dòng Cài đặt › “Quyền riêng tư quảng cáo” (set.adPrivacy)
-       và với danh sách quyền trong manifest đã gộp của bản đó (mục 6). -->
   <h1>🌱 Vườn Từ — Chính sách quyền riêng tư</h1>
-  <!-- 시행일: 2026-10-31 로 채웠다 (베트남어 meta 줄 + 아래 영어 meta 줄). 게시 날짜가 바뀌면 두 곳을 함께 고친다 -->
   <p class="meta">Ngày có hiệu lực: 31 tháng 10 năm 2026 · Áp dụng cho hai ứng dụng trên Android và iPhone/iPad: <b>Vườn Từ: Tiếng Anh</b> (com.wordgarden.vi.english; tên trên màn hình chính: “Vườn Từ Anh”) và <b>Vườn Từ: Tiếng Hàn</b> (com.wordgarden.vi.korean; tên trên màn hình chính: “Vườn Từ Hàn”), dù tên hiển thị trên Google Play hay App Store là gì · Nhà phát triển: Joung Hun Park (박종훈) · <a href="#english" lang="en">English version below</a></p>
 
   <section class="card">
@@ -83,7 +78,6 @@
   </ul>
 
   <h2>6. Quyền (permissions)</h2>
-  <!-- 게시 전에 그 출시 빌드의 병합 매니페스트와 대조한다 (web/README.md §5) -->
   <p><b>Android:</b> Ứng dụng dùng quyền truy cập Internet (INTERNET) và trạng thái mạng (ACCESS_NETWORK_STATE) cho quảng cáo; việc học không cần mạng. Cũng cho quảng cáo, ứng dụng có quyền mã quảng cáo (AD_ID) và các quyền ACCESS_ADSERVICES_AD_ID, ACCESS_ADSERVICES_ATTRIBUTION, ACCESS_ADSERVICES_TOPICS (dịch vụ quảng cáo của Android); thư viện quảng cáo của Google còn kèm quyền FOREGROUND_SERVICE cho các tác vụ chạy nền của nó. Ứng dụng dùng quyền rung (VIBRATE) để máy rung nhẹ khi bạn trả lời sai hoặc nhấn nút; quyền thông báo (POST_NOTIFICATIONS, từ Android 13, chỉ hỏi khi bạn bật nhắc học); và RECEIVE_BOOT_COMPLETED cùng WAKE_LOCK để thông báo nhắc học vẫn đến khi máy đang nghỉ hoặc vừa khởi động lại. Ứng dụng không dùng quyền báo thức chính xác (exact alarm).</p>
   <p><b>iPhone/iPad:</b> Ứng dụng có thể hỏi hai điều: có cho phép theo dõi cho quảng cáo hay không (mục 5), và “Cho phép thông báo” khi bạn bật nhắc học.</p>
   <p>Trên cả hai hệ điều hành, ứng dụng không xin các quyền nhạy cảm như vị trí, danh bạ, máy ảnh, micro hay bộ nhớ.</p>
