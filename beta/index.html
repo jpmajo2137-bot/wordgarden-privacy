@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>WordGarden — Join the Android beta</title>
+<meta name="description" content="How to get WordGarden on Android while it is in a closed test on Google Play: join the testers’ group, become a tester, wait, then install. In English, Kiswahili and Korean.">
+<link rel="canonical" href="https://jpmajo2137-bot.github.io/wordgarden-privacy/beta/">
+<link rel="icon" type="image/png" href="../app/icon.png">
+<link rel="apple-touch-icon" href="../app/icon.png">
+<meta name="apple-itunes-app" content="app-id=6825913827">
+<style>
+  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --leaf-ink:#fff; --card:#fffdf7; --line:#e2dac3; --warn-bg:#ffeaa8; --warn-line:#d0960f; --warn-ink:#3b2a00; --warn-num:#2b1d00; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --leaf-ink:#0e1712; --card:#15231b; --line:#2a4234; --warn-bg:#3f3210; --warn-line:#f0be45; --warn-ink:#fde9b5; --warn-num:#2b1d00; } }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior:auto; } }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; overflow-wrap:anywhere; }
+  :lang(ko) { word-break:keep-all; }
+  main { max-width:560px; margin:0 auto; padding:28px 16px 56px; }
+  header { text-align:center; }
+  .logo { width:64px; height:64px; border-radius:16px; }
+  h1 { font-size:28px; line-height:1.25; margin:8px 0 2px; }
+  p.sub { color:var(--muted); margin:0 0 16px; }
+  .nw { white-space:nowrap; }
+  nav.langs { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; max-width:400px; margin:0 auto; }
+  nav.langs a { display:flex; align-items:center; justify-content:center; min-height:48px; padding:10px 6px; border-radius:999px; border:1px solid var(--line); background:var(--card); color:var(--ink); font-weight:700; text-decoration:none; }
+  section.lang { scroll-margin-top:12px; margin-top:24px; }
+  section.lang + section.lang { border-top:1px solid var(--line); margin-top:48px; padding-top:28px; }
+  .tag { margin:0; color:var(--leaf); font-size:13px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+  h2 { font-size:22px; line-height:1.3; margin:4px 0 10px; }
+  h3 { font-size:18px; line-height:1.35; margin:0 0 6px; }
+  p { margin:8px 0; }
+  a { color:var(--leaf); }
+  .wait { background:var(--warn-bg); color:var(--warn-ink); border:3px solid var(--warn-line); border-radius:20px; padding:16px 18px; margin:20px 0; }
+  .wait h3 { font-size:21px; font-weight:800; }
+  .wait p { font-size:17px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px 18px; margin:16px 0; }
+  .card ul, .more ul { margin:6px 0 0; padding-left:22px; }
+  .card li, .more li { margin:6px 0; }
+  ol.steps { list-style:none; margin:16px 0 0; padding:0; }
+  ol.steps > li { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px 18px 16px; margin:14px 0; }
+  ol.steps > li.wait { background:var(--warn-bg); border:3px solid var(--warn-line); }
+  ol.steps h3 { display:flex; align-items:center; gap:10px; font-size:19px; }
+  ol.steps ul { list-style:disc; margin:6px 0; padding-left:22px; }
+  ol.steps ul li { margin:6px 0; }
+  .num { flex:none; display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--leaf); color:var(--leaf-ink); font-size:17px; font-weight:800; }
+  li.wait .num { background:var(--warn-line); color:var(--warn-num); }
+  .btn { display:block; margin:12px 0; padding:16px; border-radius:18px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:17px; text-align:center; text-decoration:none; }
+  .btn.alt { background:var(--card); color:var(--ink); border:1px solid var(--line); }
+  .small { color:var(--muted); font-size:14px; }
+  .more h3 { margin-top:28px; }
+  .meta { color:var(--muted); font-size:13px; margin-top:48px; text-align:center; }
+  .meta a { color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img class="logo" src="../app/icon.png" alt="" width="64" height="64">
+    <h1>WordGarden</h1>
+    <p class="sub"><span class="nw">Android beta test ·</span> <span class="nw" lang="sw">Majaribio kwenye Android ·</span> <span class="nw" lang="ko">Android 베타 테스트</span></p>
+    <nav class="langs" aria-label="Language">
+      <a href="#en">English</a>
+      <a href="#sw" lang="sw">Kiswahili</a>
+      <a href="#ko" lang="ko">한국어</a>
+    </nav>
+  </header>
+
+  <!-- ===================== English ===================== -->
+  <section class="lang" id="en" lang="en">
+    <p class="tag">English</p>
+    <h2>Get WordGarden on Android</h2>
+    <p>WordGarden is the new app from Joung Hun Park, who also made “JPH: Learn Korean in English”. It is one free app with courses for learning Korean and English, and it replaces the older apps.</p>
+    <p>On Android, it is still in a closed test on Google Play, so you must sign up as a tester first.</p>
+
+    <div class="wait">
+      <h3><span aria-hidden="true">⏳ </span>Important: the download is not ready right away</h3>
+      <p>After you sign up, it can take a long time before Google Play lets you install WordGarden: <strong>from a few hours to a few days</strong>. During that time, the Play Store may say that the app is not available or “Item not found”, or it may show nothing. You did nothing wrong.</p>
+      <p><strong>Do not sign up again.</strong> Just try the install link in step 4 again later, for example the next day.</p>
+    </div>
+
+    <div class="card">
+      <h3>What you need</h3>
+      <ul>
+        <li>An Android phone with Android 7.0 or newer</li>
+        <li>The Google account you use in the Play Store on that phone. Use this same account in every step.</li>
+      </ul>
+    </div>
+
+    <ol class="steps" role="list">
+      <li>
+        <h3><span class="num">1</span><span>Join the testers’ group</span></h3>
+        <p>Open the group page. Sign in with the same Google account as on your phone, then tap “Join group”.</p>
+        <a class="btn" href="https://groups.google.com/g/wordgarden-beta-testers">Open the testers’ group</a>
+        <p class="small">Already in our earlier testers’ group (for <span lang="sw">Bustani ya Maneno</span>)? You can skip this step and go to step 2.</p>
+        <p class="small">Nobody can post in this group, and no emails are sent to it. Other members cannot see your email address. Only the developer (the group owner) can see it, and it is used only to give you access to the test. You can leave the group at any time.</p>
+      </li>
+      <li>
+        <h3><span class="num">2</span><span>Become a tester</span></h3>
+        <p>Open the testing page with the same Google account and tap “Become a tester”.</p>
+        <a class="btn" href="https://play.google.com/apps/testing/com.wordgarden.app">Open the testing page</a>
+      </li>
+      <li class="wait">
+        <h3><span class="num">3</span><span><span aria-hidden="true">⏳ </span>Wait before you install</span></h3>
+        <p>Google Play needs time to add you as a tester: <strong>from a few hours to a few days</strong>. If the Play Store says that the app is not available or “Item not found”, or shows nothing, you did nothing wrong.</p>
+        <p><strong>Do not sign up again.</strong> Try the link in step 4 again later, for example the next day.</p>
+      </li>
+      <li>
+        <h3><span class="num">4</span><span>Install WordGarden</span></h3>
+        <p>Open WordGarden on Google Play and tap “Install”. When it is installed, tap “Open”.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.wordgarden.app">Open WordGarden on Google Play</a>
+        <p>On the first screen (“What do you want to learn?”), tap “Korean”. If the screen is in another language (for example Kiswahili), first tap “English” in the row of language names lower down on the screen. Then tap “Korean”. You can change the course later in Settings.</p>
+        <p class="small">On phones set to Kiswahili, the app is called “<span lang="sw">Bustani ya Maneno</span>”, and on phones set to Korean, “<span lang="ko">워드가든</span>”. It is the same app.</p>
+      </li>
+    </ol>
+
+    <div class="more">
+      <h3>Your JPH app</h3>
+      <p>The JPH app on Android has been retired: it now only shows a notice about the new app and can no longer be used for learning. Your progress in JPH does not move to WordGarden, so you start fresh in WordGarden.</p>
+
+      <h3>Using an iPhone?</h3>
+      <p>WordGarden is already on the App Store. You don’t need to sign up.</p>
+      <a class="btn alt" href="https://apps.apple.com/app/id6825913827">Download on the App Store</a>
+
+      <h3>Testing is free</h3>
+      <p>There is nothing you have to do except use the app. Your feedback is welcome: in the app, open Settings (the gear icon) › Send feedback.</p>
+
+      <h3>Something not working?</h3>
+      <ul>
+        <li>If the group page says “You don’t have permission”, you are not signed in to Google. Tap “Sign in” at the top of the page, then open the group link again.</li>
+        <li>More than one Google account on your phone? Use the same one in steps 1, 2 and 4. In the Play Store, tap your profile picture at the top right to switch accounts.</li>
+        <li>If this page opened inside another app and Google sign-in does not work, open this page in Chrome.</li>
+      </ul>
+      <p>Still need help?</p>
+      <a class="btn alt" href="../korean/support/">Support page</a>
+    </div>
+  </section>
+
+  <!-- ===================== Kiswahili ===================== -->
+  <section class="lang" id="sw" lang="sw">
+    <p class="tag">Kiswahili</p>
+    <h2>Pata WordGarden kwenye Android</h2>
+    <p>WordGarden ni programu mpya ya Joung Hun Park, ambaye pia alitengeneza “<span lang="en">JPH: Learn Korean in English</span>”. Ni programu moja ya bure yenye kozi za kujifunza Kikorea na Kiingereza, na inachukua nafasi ya programu za zamani.</p>
+    <p>Kwenye Android, bado iko katika majaribio kwenye Google Play na inapatikana kwa watumiaji wa majaribio (<span lang="en">testers</span>) tu, kwa hiyo kwanza jiandikishe kama mtumiaji wa majaribio.</p>
+
+    <div class="wait">
+      <h3><span aria-hidden="true">⏳ </span>Muhimu: hutaweza kupakua mara moja</h3>
+      <p>Baada ya kujiandikisha, inaweza kuchukua muda mrefu kabla Google Play haijakuruhusu kusakinisha WordGarden: <strong>kuanzia saa chache hadi siku chache</strong>. Katika muda huo, Play Store inaweza kusema kwamba programu haipatikani au “<span lang="en">Item not found</span>”, au huenda isionyeshe chochote. Hujakosea chochote.</p>
+      <p><strong>Usijiandikishe tena.</strong> Fungua tu kiungo cha kusakinisha (hatua ya 4) tena baadaye, kwa mfano kesho.</p>
+    </div>
+
+    <div class="card">
+      <h3>Unachohitaji</h3>
+      <ul>
+        <li>Simu ya Android yenye Android 7.0 au toleo jipya zaidi</li>
+        <li>Akaunti ya Google unayotumia kwenye Play Store katika simu hiyo. Tumia akaunti hiyo hiyo katika kila hatua.</li>
+      </ul>
+    </div>
+
+    <ol class="steps" role="list">
+      <li>
+        <h3><span class="num">1</span><span>Jiunge na kikundi cha majaribio</span></h3>
+        <p>Fungua ukurasa wa kikundi. Ingia (<span lang="en">Sign in</span>) kwa akaunti ileile ya Google unayotumia kwenye simu yako, kisha bonyeza “<span lang="en">Join group</span>”.</p>
+        <a class="btn" href="https://groups.google.com/g/wordgarden-beta-testers">Fungua kikundi cha majaribio</a>
+        <p class="small">Tayari uko kwenye kikundi chetu cha awali cha majaribio (cha Bustani ya Maneno)? Unaweza kuruka hatua hii na kwenda hatua ya 2.</p>
+        <p class="small">Hakuna anayeweza kutuma ujumbe kwenye kikundi hiki, na hakuna barua pepe zinazotumwa kwake. Wanachama wengine hawawezi kuona anwani yako ya barua pepe. Ni msanidi programu tu (mmiliki wa kikundi) anayeweza kuiona, naye huitumia tu kukuruhusu kushiriki majaribio. Unaweza kutoka kwenye kikundi wakati wowote.</p>
+      </li>
+      <li>
+        <h3><span class="num">2</span><span>Kuwa mtumiaji wa majaribio</span></h3>
+        <p>Fungua ukurasa wa majaribio kwa akaunti ileile ya Google, kisha bonyeza “<span lang="en">Become a tester</span>”.</p>
+        <a class="btn" href="https://play.google.com/apps/testing/com.wordgarden.app">Fungua ukurasa wa majaribio</a>
+      </li>
+      <li class="wait">
+        <h3><span class="num">3</span><span><span aria-hidden="true">⏳ </span>Subiri kabla ya kusakinisha</span></h3>
+        <p>Google Play inahitaji muda ili ikuongeze kwenye orodha ya watumiaji wa majaribio: <strong>kuanzia saa chache hadi siku chache</strong>. Play Store ikisema kwamba programu haipatikani au “<span lang="en">Item not found</span>”, au isipoonyesha chochote, hujakosea chochote.</p>
+        <p><strong>Usijiandikishe tena.</strong> Fungua tena kiungo cha hatua ya 4 baadaye, kwa mfano kesho.</p>
+      </li>
+      <li>
+        <h3><span class="num">4</span><span>Sakinisha WordGarden</span></h3>
+        <p>Fungua WordGarden kwenye Google Play na ubonyeze “<span lang="en">Install</span>” (kwenye simu iliyo kwa Kiswahili: “Sakinisha”). Ikishasakinishwa, bonyeza “<span lang="en">Open</span>” (“Fungua”).</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.wordgarden.app">Fungua WordGarden kwenye Google Play</a>
+        <p>Kwenye skrini ya kwanza, chagua unachotaka kujifunza. Sehemu ya chini ya skrini kuna safu ya majina ya lugha (“Lugha yangu”):</p>
+        <ul>
+          <li>Kujifunza Kikorea kwa Kiswahili: hakikisha “Kiswahili” imechaguliwa kwenye safu hiyo, kisha bonyeza “Kikorea”.</li>
+          <li>Kujifunza Kikorea kwa Kiingereza, kama kwenye JPH: bonyeza “<span lang="en">English</span>” kwenye safu hiyo, kisha bonyeza “<span lang="en">Korean</span>”.</li>
+        </ul>
+        <p>Unaweza kubadilisha kozi baadaye kwenye Mipangilio (<span lang="en">Settings</span>).</p>
+        <p class="small">Kwenye simu iliyo kwa Kiswahili, programu inaitwa “Bustani ya Maneno”, na kwenye simu iliyo kwa Kikorea, “<span lang="ko">워드가든</span>”. Ni programu ileile.</p>
+      </li>
+    </ol>
+
+    <div class="more">
+      <h3>Programu yako ya JPH</h3>
+      <p>Programu ya JPH kwenye Android haitumiki tena kujifunza: sasa inaonyesha tu tangazo la programu mpya. Maendeleo yako katika JPH hayahamishwi kwenda WordGarden, kwa hiyo utaanza upya ndani ya WordGarden.</p>
+
+      <h3>Una iPhone?</h3>
+      <p>WordGarden tayari iko kwenye App Store, kwa hiyo huhitaji kujiandikisha.</p>
+      <a class="btn alt" href="https://apps.apple.com/app/id6825913827">Pakua kwenye App Store</a>
+
+      <h3>Majaribio ni bure</h3>
+      <p>Hakuna unachotakiwa kufanya isipokuwa kutumia programu. Maoni yako yanakaribishwa: ndani ya programu, fungua Mipangilio (<span lang="en">Settings</span>, ikoni ya gia) › Tuma maoni (<span lang="en">Send feedback</span>).</p>
+
+      <h3>Kuna tatizo?</h3>
+      <ul>
+        <li>Ukurasa wa kikundi ukisema “<span lang="en">You don’t have permission</span>”, hujaingia kwenye akaunti ya Google. Bonyeza “<span lang="en">Sign in</span>” juu ya ukurasa, kisha ufungue kiungo cha kikundi tena.</li>
+        <li>Una akaunti zaidi ya moja ya Google kwenye simu? Tumia akaunti ileile katika hatua ya 1, 2 na 4. Kwenye Play Store, gusa picha ya akaunti yako juu kulia ili kubadilisha akaunti.</li>
+        <li>Ikiwa ukurasa huu umefunguka ndani ya programu nyingine na huwezi kuingia kwenye Google, ufungue kwenye Chrome.</li>
+      </ul>
+      <p>Bado unahitaji msaada?</p>
+      <a class="btn alt" href="../bustani/support/">Ukurasa wa msaada</a>
+    </div>
+  </section>
+
+  <!-- ===================== 한국어 ===================== -->
+  <section class="lang" id="ko" lang="ko">
+    <p class="tag">한국어</p>
+    <h2>Android에서 워드가든 받기</h2>
+    <p>워드가든은 ‘<span lang="en">JPH: Learn Korean in English</span>’를 만든 박종훈(Joung Hun Park)의 새 앱이에요. 한국어와 영어를 배우는 과정이 무료 앱 하나에 들어 있고, 예전 앱들을 대신해요.</p>
+    <p>Android용은 아직 Google Play에서 비공개 테스트 중이라, 먼저 테스터로 신청해야 받을 수 있어요.</p>
+
+    <div class="wait">
+      <h3><span aria-hidden="true">⏳ </span>중요: 신청하고 바로 받을 수는 없어요</h3>
+      <p>신청한 뒤 Google Play에서 워드가든을 설치할 수 있게 되기까지 시간이 오래 걸릴 수 있어요. <strong>몇 시간에서 며칠</strong>이 걸리기도 해요. 그동안 Play 스토어에 앱을 사용할 수 없다거나 찾을 수 없다(<span lang="en">Item not found</span>)는 말이 나오거나, 아무것도 보이지 않을 수 있어요. 잘못하신 게 아니에요.</p>
+      <p><strong>다시 신청하지 마세요.</strong> 나중에(예를 들어 다음 날) 4단계의 설치 링크를 다시 열어 보세요.</p>
+    </div>
+
+    <div class="card">
+      <h3>준비할 것</h3>
+      <ul>
+        <li>Android 7.0 이상인 Android 휴대폰</li>
+        <li>그 휴대폰의 Play 스토어에서 쓰는 Google 계정. 모든 단계를 이 계정 하나로 해 주세요.</li>
+      </ul>
+    </div>
+
+    <ol class="steps" role="list">
+      <li>
+        <h3><span class="num">1</span><span>테스터 그룹에 가입하기</span></h3>
+        <p>그룹 페이지를 열고, 휴대폰과 같은 Google 계정으로 로그인한 다음 ‘그룹 가입’(<span lang="en">Join group</span>)을 누르세요.</p>
+        <a class="btn" href="https://groups.google.com/g/wordgarden-beta-testers">테스터 그룹 열기</a>
+        <p class="small">예전 테스터 그룹(Bustani ya Maneno)에 이미 가입하셨다면 이 단계는 건너뛰고 2단계로 가세요.</p>
+        <p class="small">이 그룹에는 아무도 글을 올릴 수 없고, 그룹으로 보내는 메일도 없어요. 다른 회원은 내 메일 주소를 볼 수 없어요. 그룹 주인인 개발자만 볼 수 있고, 테스트에 참여할 수 있게 하는 데에만 써요. 그룹에서는 언제든 나갈 수 있어요.</p>
+      </li>
+      <li>
+        <h3><span class="num">2</span><span>테스터 되기</span></h3>
+        <p>같은 Google 계정으로 테스트 참여 페이지를 열고 ‘테스터 되기’(<span lang="en">Become a tester</span>)를 누르세요.</p>
+        <a class="btn" href="https://play.google.com/apps/testing/com.wordgarden.app">테스트 참여 페이지 열기</a>
+      </li>
+      <li class="wait">
+        <h3><span class="num">3</span><span><span aria-hidden="true">⏳ </span>설치하기 전에 기다려 주세요</span></h3>
+        <p>Google Play가 나를 테스터로 등록하기까지 시간이 걸려요. <strong>몇 시간에서 며칠</strong>까지 걸릴 수 있어요. Play 스토어에 앱을 사용할 수 없다거나 찾을 수 없다(<span lang="en">Item not found</span>)는 말이 나오거나 아무것도 보이지 않아도, 잘못하신 게 아니에요.</p>
+        <p><strong>다시 신청하지 마세요.</strong> 나중에(예를 들어 다음 날) 4단계 링크를 다시 열어 보세요.</p>
+      </li>
+      <li>
+        <h3><span class="num">4</span><span>워드가든 설치하기</span></h3>
+        <p>Google Play에서 워드가든을 열고 ‘설치’(<span lang="en">Install</span>)를 누르세요. 설치가 끝나면 ‘열기’(<span lang="en">Open</span>)를 누르세요.</p>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=com.wordgarden.app">Google Play에서 워드가든 열기</a>
+        <p>첫 화면(‘<span lang="en">What do you want to learn?</span>’)에서 배울 것을 고르세요. JPH 앱 사용자라면 ‘<span lang="en">Korean</span>’을 누르면 돼요. 화면이 영어가 아니면(예: 스와힐리어, 한국어) 먼저 화면 아래쪽 언어 줄에서 ‘<span lang="en">English</span>’를 누른 뒤 ‘<span lang="en">Korean</span>’을 누르세요. 과정은 나중에 설정(<span lang="en">Settings</span>)에서 바꿀 수 있어요.</p>
+        <p class="small">휴대폰 언어가 스와힐리어면 앱 이름이 ‘<span lang="sw">Bustani ya Maneno</span>’로, 한국어면 ‘워드가든’으로 보여요. 모두 같은 앱이에요.</p>
+      </li>
+    </ol>
+
+    <div class="more">
+      <h3>JPH 앱은 이제 쓸 수 없어요</h3>
+      <p>Android의 JPH 앱은 서비스가 끝나서 새 앱 안내만 보여 주고, 더 이상 학습에 쓸 수 없어요. JPH의 학습 기록은 워드가든으로 옮겨지지 않아서, 워드가든에서는 처음부터 시작해요.</p>
+
+      <h3>iPhone을 쓰고 있나요?</h3>
+      <p>워드가든은 이미 App Store에 있어요. 테스터 신청 없이 바로 받을 수 있어요.</p>
+      <a class="btn alt" href="https://apps.apple.com/app/id6825913827">App Store에서 받기</a>
+
+      <h3>테스트는 무료예요</h3>
+      <p>앱을 쓰는 것 말고는 따로 하실 일이 없어요. 의견은 언제나 환영해요. 앱의 설정(<span lang="en">Settings</span>, 톱니바퀴) › 의견 보내기(<span lang="en">Send feedback</span>)에서 보내 주세요.</p>
+
+      <h3>잘 안 될 때</h3>
+      <ul>
+        <li>그룹 페이지에 ‘<span lang="en">You don’t have permission</span>’이 보이면 Google에 로그인하지 않은 상태예요. 페이지 위쪽의 ‘<span lang="en">Sign in</span>’(로그인)을 누른 뒤 그룹 링크를 다시 여세요.</li>
+        <li>휴대폰에 Google 계정이 여러 개인가요? 1·2·4단계에서 같은 계정을 쓰세요. Play 스토어에서는 오른쪽 위의 프로필 사진을 눌러 계정을 바꿀 수 있어요.</li>
+        <li>이 페이지가 다른 앱 안에서 열려 Google 로그인이 되지 않으면, Chrome에서 이 페이지를 여세요.</li>
+      </ul>
+      <p>그래도 해결되지 않나요?</p>
+      <a class="btn alt" href="../support/">고객 지원 페이지</a>
+    </div>
+  </section>
+
+  <p class="meta">WordGarden · Developer: Joung Hun Park (<span lang="ko">박종훈</span>)<br>Support: <a href="../korean/support/">English</a> · <a href="../bustani/support/" lang="sw">Kiswahili</a> · <a href="../support/" lang="ko">한국어</a><br>Privacy policy: <a href="../korean/">English</a> · <a href="../bustani/" lang="sw">Kiswahili</a> · <a href="../" lang="ko">한국어</a><br>This page uses no cookies or analytics.</p>
+</main>
+</body>
+</html>
