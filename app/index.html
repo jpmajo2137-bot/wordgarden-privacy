@@ -63,6 +63,7 @@
     <li>배운 단어로 읽는 영어 이야기 15장과 영단어 게임 3가지</li>
     <li>회원가입 없이 무료(광고로 운영) · 학습하는 동안엔 광고 없음 · 인터넷 없이도 학습</li>
   </ul>
+  <p class="note">워드가든 앱 하나에 여러 과정이 들어 있어요. 이 한국어 → 영어 과정은 앱을 처음 열 때 나오는 화면에서 ‘영어’를 고르면 시작돼요.</p>
   <!-- Buttons: App Store (static link when the app is on sale, otherwise "coming soon" until the iTunes lookup finds it)
        and Android (beta.json at the site root: public = Google Play, beta = tester-group steps, closed = email request). -->
   <div id="get">
@@ -78,7 +79,7 @@
 </main>
 <script>
 (function () {
-  var C = {"pkg": "com.wordgarden.app", "iosId": "6825913827", "country": "kr", "iosLive": true, "betaUrl": "../beta.json", "pt": "", "t": {"ios": "App Store에서 받기", "iosSoon": "App Store (iPhone): 곧 나와요", "play": "Google Play에서 받기", "beta": "Android: 베타 테스트 참여"}}
+  var C = {"pkg": "com.wordgarden.app", "iosId": "6825913827", "country": "kr", "iosLive": true, "betaUrl": "../beta.json", "pt": "", "course": "ko-en", "t": {"ios": "App Store에서 받기", "iosSoon": "App Store (iPhone): 곧 나와요", "play": "Google Play에서 받기", "beta": "Android: 베타 테스트 참여"}}
   function $(id) { return document.getElementById(id) }
   function noop() {}
   var ua = navigator.userAgent || ''
@@ -92,8 +93,9 @@
   function appStoreUrl() {
     return 'https://apps.apple.com/app/id' + C.iosId + (C.pt ? '?pt=' + C.pt + '&ct=' + ct + '&mt=8' : '')
   }
+  // utm_source = landing-<course> (C.course): Play Console reports only source and campaign, so the course goes into the source
   function playUrl() {
-    return 'https://play.google.com/store/apps/details?id=' + C.pkg + '&referrer=' + encodeURIComponent('utm_source=landing&utm_campaign=' + ct)
+    return 'https://play.google.com/store/apps/details?id=' + C.pkg + '&referrer=' + encodeURIComponent('utm_source=landing-' + C.course + '&utm_campaign=' + ct)
   }
   var get = $('get'), ios = $('ios'), android = $('android'), info = $('android-info')
 
