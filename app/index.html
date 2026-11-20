@@ -21,47 +21,70 @@
 <meta property="og:image:alt" content="워드가든: 영단어를 키우는 정원. 15,000 단어, 7단계, 2분 레벨 테스트">
 <meta name="twitter:card" content="summary_large_image">
 <style>
-  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --leaf-ink:#fff; --card:#fffdf7; --line:#e2dac3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --leaf-ink:#0e1712; --card:#15231b; --line:#2a4234; } }
+  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#526155; --leaf:#26763f; --leaf-hover:#1d5d31; --leaf-ink:#fff; --leaf-soft:#dcefd9; --card:#fffdf7; --surface2:#efe9d8; --line:#e2dac3; --line-strong:#cfc4a6; --shadow:0 12px 32px rgba(31,43,34,0.08); --shadow-sm:0 2px 10px rgba(31,43,34,0.05); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#9eb5a3; --leaf:#7dd28a; --leaf-hover:#96dfa1; --leaf-ink:#0e1712; --leaf-soft:#1f3a29; --card:#15231b; --surface2:#1c2e24; --line:#2a4234; --line-strong:#395946; --shadow:0 12px 32px rgba(0,0,0,0.36); --shadow-sm:0 2px 10px rgba(0,0,0,0.28); } }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif; overflow-wrap:anywhere; }
+  body { margin:0; background:var(--bg); background-image:radial-gradient(640px 320px at 50% -60px, rgba(38,118,63,0.12), transparent 72%); color:var(--ink); font:16px/1.62 "Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; -webkit-font-smoothing:antialiased; }
   :lang(ko) { word-break:keep-all; }
-  main { max-width:480px; margin:0 auto; padding:48px 16px 56px; text-align:center; }
-  .logo { width:88px; height:88px; border-radius:22px; }
-  h1 { font-size:28px; line-height:1.25; margin:12px 0 4px; }
-  p.sub { color:var(--muted); margin:0 0 24px; }
-  ul.feat { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:14px 20px 14px 38px; margin:0 0 12px; }
-  ul.feat li { margin:4px 0; }
-  .note { color:var(--muted); font-size:13px; text-align:left; margin:0 4px 16px; }
-  #get { margin-top:16px; }
-  .btn { display:block; margin:12px 0; padding:16px; border-radius:18px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:17px; text-decoration:none; }
-  .btn.alt { background:var(--card); color:var(--ink); border:1px solid var(--line); }
-  .btn.soon { background:transparent; color:var(--muted); border:1px dashed var(--line); font-weight:700; }
-  #android-info { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:20px; padding:6px 20px 14px; margin-top:20px; }
-  #android-info h2 { font-size:18px; margin:12px 0 4px; }
-  #android-info p, #android-info li { font-size:15px; }
-  #android-info ol { padding-left:22px; } #android-info li { margin:8px 0; }
-  #android-info a:not(.btn) { color:var(--leaf); font-weight:700; }
+  main { max-width:540px; margin:0 auto; padding:20px 16px 60px; text-align:center; }
+  .topnav { display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:22px; padding:6px 10px; background:var(--card); border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow-sm); font-size:13.5px; }
+  .topnav a { color:var(--muted); text-decoration:none; font-weight:700; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center; gap:6px; border-radius:999px; }
+  .topnav a:hover { color:var(--leaf); background:var(--leaf-soft); }
+  .topnav .home-link { color:var(--ink); }
+  .topnav .nav-links { display:flex; align-items:center; gap:2px; }
+  .hero-card { background:var(--card); border:1px solid var(--line); border-radius:26px; padding:24px 20px 22px; box-shadow:var(--shadow); }
+  .logo { width:84px; height:84px; border-radius:21px; box-shadow:var(--shadow-sm); }
+  .v22-pill { display:inline-flex; align-items:center; gap:6px; margin:14px auto 0; padding:5px 12px; border-radius:999px; background:var(--leaf-soft); color:var(--leaf); font-size:12.5px; font-weight:800; }
+  h1 { font-size:28px; line-height:1.24; letter-spacing:-0.02em; margin:12px 0 6px; }
+  p.sub { color:var(--muted); margin:0 0 18px; font-size:15.5px; }
+  .banner { width:100%; height:auto; aspect-ratio:1024/500; border-radius:16px; border:1px solid var(--line); margin:0 0 18px; display:block; }
+  ul.feat { list-style:none; text-align:left; background:var(--bg); border:1px solid var(--line); border-radius:18px; padding:12px 16px; margin:0 0 14px; }
+  ul.feat li { position:relative; padding:6px 0 6px 24px; font-size:14.5px; line-height:1.55; }
+  ul.feat li + li { border-top:1px solid var(--line); }
+  ul.feat li::before { content:"✓"; position:absolute; left:2px; top:6px; color:var(--leaf); font-weight:800; }
+  .note { color:var(--muted); font-size:13.5px; text-align:left; margin:8px 4px 12px; line-height:1.55; }
+  #get { margin-top:18px; }
+  .btn { display:block; margin:10px 0; padding:15px 18px; min-height:52px; border-radius:16px; background:var(--leaf); color:var(--leaf-ink); font-weight:800; font-size:16.5px; text-decoration:none; box-shadow:0 8px 20px rgba(38,118,63,0.22); transition:transform .12s, background .15s; }
+  .btn:hover { background:var(--leaf-hover); transform:translateY(-1px); }
+  .btn.alt { background:var(--card); color:var(--ink); border:1.5px solid var(--line-strong); box-shadow:var(--shadow-sm); }
+  .btn.alt:hover { background:var(--surface2); }
+  .btn.soon { background:transparent; color:var(--muted); border:1.5px dashed var(--line-strong); font-weight:700; box-shadow:none; }
+  .btn.soon:hover { background:transparent; transform:none; }
+  #android-info, #beta { text-align:left; background:var(--card); border:1px solid var(--line); border-radius:22px; padding:10px 20px 16px; margin-top:18px; box-shadow:var(--shadow-sm); }
+  #android-info h2, #beta h2 { font-size:18px; margin:10px 0 6px; color:var(--leaf); }
+  #android-info p, #android-info li, #beta p, #beta li { font-size:14.5px; line-height:1.6; }
+  #android-info ol, #beta ol { padding-left:20px; } #android-info li, #beta li { margin:8px 0; }
+  #android-info a:not(.btn), #beta a:not(.btn) { color:var(--leaf); font-weight:700; }
   #android-info .btn { text-align:center; }
-  .tip { color:var(--muted); font-size:14px; }
-  #inapp { text-align:left; margin:4px 4px 0; }
+  .tip { color:var(--muted); font-size:13.5px; }
+  #inapp { text-align:left; margin:10px 4px 0; padding:10px 14px; border-radius:14px; background:var(--surface2); }
   #inapp a { color:var(--leaf); font-weight:700; }
-  .meta { color:var(--muted); font-size:13px; margin-top:28px; }
-  .meta a { color:var(--muted); }
+  .meta { color:var(--muted); font-size:13px; margin-top:26px; line-height:1.8; }
+  .meta a { color:var(--leaf); font-weight:600; text-decoration:none; }
+  .meta a:hover { text-decoration:underline; }
   [hidden] { display:none !important; }
+  @media (prefers-reduced-motion: reduce) { .btn { transition:none !important; } }
 </style>
 </head>
 <body>
 <main>
-  <img class="logo" src="icon.png" alt="" width="88" height="88">
+  <nav class="topnav" aria-label="Navigation">
+    <a class="home-link" href="https://jpmajo2137-bot.github.io/?lang=ko">← 워드가든 홈</a>
+    <span class="nav-links"><a href="../support/">고객 지원</a><a href="../">개인정보</a></span>
+  </nav>
+  <div class="hero-card">
+  <img class="logo" src="icon.png" alt="" width="84" height="84">
+  <div><span class="v22-pill">NEW v2.2 · 모든 단어에 쉬운 영어 해설 추가</span></div>
   <h1>워드가든</h1>
   <p class="sub">외운 만큼 꽃이 피는, 나만의 영단어 정원</p>
+  <img class="banner" src="og.png" alt="워드가든: 영단어를 키우는 정원. 15,000 단어, 7단계, 2분 레벨 테스트" width="1024" height="500">
   <ul class="feat">
     <li>영단어 15,000개, 모든 단어에 한국어 뜻·예문과 번역·미국/영국 발음</li>
     <li>2분 어휘력 테스트로 내 수준에 맞는 단계부터 시작</li>
     <li>잊을 때쯤 다시 만나는 망각곡선 복습 (1·3·7·15·35·90일)</li>
     <li>배운 단어로 읽는 영어 이야기 15장과 영단어 게임 3가지</li>
     <li>회원가입 없이 무료(광고로 운영) · 학습하는 동안엔 광고 없음 · 인터넷 없이도 학습</li>
+    <li>v2.2 새 소식: 모든 영단어에 쉬운 영어 해설(EN ·) 탑재 (설정에서 켜고 끄기 · 해설 복습 퀴즈)</li>
   </ul>
   <p class="note">워드가든 앱 하나에 여러 과정이 들어 있어요. 이 한국어 → 영어 과정은 앱을 처음 열 때 나오는 화면에서 ‘영어’를 고르면 시작돼요.</p>
   <!-- Buttons: App Store (static link when the app is on sale, otherwise "coming soon" until the iTunes lookup finds it)
@@ -71,6 +94,7 @@
     <a class="btn alt" id="android" href="#android-info">Android: 베타 테스트 참여</a>
   </div>
   <p class="tip" id="inapp" hidden><span id="inapp-auto" hidden>앱 안의 브라우저(카카오톡 등)에서 열었어요. 스토어나 Google 로그인이 열리지 않으면 <a id="inapp-open" href="#">다른 브라우저로 열기</a>를 눌러 주세요.</span><span id="inapp-manual" hidden>오른쪽 위 메뉴에서 ‘Safari로 열기’ 또는 ‘다른 브라우저로 열기’를 눌러 주세요.</span></p>
+  </div>
   <section id="android-info">
     <div id="a-closed"><h2>Android 휴대폰인가요?</h2><p>Android 앱은 아직 Google Play에서 비공개 테스트 중이에요. 참여하고 싶으면 Play 스토어에서 쓰는 Google 계정(Gmail) 주소를 메일로 보내 주세요. 테스터 명단에 넣고 답장 드릴게요. 받은 주소는 명단에 넣는 데에만 써요.</p><p><a class="btn alt" id="mail-join" href="mailto:jpmajo2137@gmail.com?subject=%EC%9B%8C%EB%93%9C%EA%B0%80%EB%93%A0%20Android%20%EB%B2%A0%ED%83%80%20%EC%B0%B8%EC%97%AC&amp;body=Play%20%EC%8A%A4%ED%86%A0%EC%96%B4%EC%97%90%EC%84%9C%20%EC%93%B0%EB%8A%94%20Google%20%EA%B3%84%EC%A0%95%28Gmail%29%3A%20">메일로 참여 신청하기</a></p></div>
     <div id="a-beta" hidden><h2>Android 휴대폰인가요?</h2><p>워드가든은 아직 Google Play에서 비공개 테스트 중이에요. 정식으로 출시하려면 테스터 12명이 14일 동안 참여해야 해요. 참여는 무료예요.</p><ol><li><a id="beta-group" href="#">테스터 그룹에 가입</a>하세요. Play 스토어에서 쓰는 Google 계정으로 로그인한 뒤 ‘Join group’(그룹 가입)을 누르세요.</li><li><a id="beta-optin" href="https://play.google.com/apps/testing/com.wordgarden.app">테스트 참여 페이지</a>를 열고 ‘테스터 되기’(Become a tester)를 누르세요.</li><li><a class="play-link" href="https://play.google.com/store/apps/details?id=com.wordgarden.app">Google Play에서 워드가든을 설치</a>하세요.</li><li>14일 동안 지우지 말고 가끔 열어 주세요. 그 사이에 그룹이나 테스트에서 나가면 14일을 처음부터 다시 세요.</li></ol><p class="tip">그룹 링크에서 ‘You don't have permission’ 이 보이면 Google에 로그인하지 않은 상태예요. 위쪽 Sign in(로그인)을 누른 뒤 그룹 링크를 다시 여세요.</p></div>

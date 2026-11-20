@@ -10,18 +10,36 @@
 <link rel="icon" type="image/png" href="../english/icon.png">
 <link rel="apple-touch-icon" href="../english/icon.png">
 <style>
-  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --card:#fffdf7; --line:#e2dac3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --card:#15231b; --line:#2a4234; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:40px 20px 64px; }
-  h1 { font-size:28px; margin:0 0 4px; } h2 { font-size:19px; margin:32px 0 8px; color:var(--leaf); }
-  .meta { color:var(--muted); font-size:14px; margin:0 0 24px; }
-  section.card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:4px 22px 18px; margin-top:28px; }
-  ul { padding-left:20px; } a { color:var(--leaf); }
+  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#526155; --leaf:#26763f; --leaf-hover:#1d5d31; --leaf-ink:#fff; --leaf-soft:#dcefd9; --card:#fffdf7; --surface2:#efe9d8; --line:#e2dac3; --line-strong:#cfc4a6; --shadow:0 12px 32px rgba(31,43,34,0.07); --shadow-sm:0 2px 10px rgba(31,43,34,0.05); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#9eb5a3; --leaf:#7dd28a; --leaf-hover:#96dfa1; --leaf-ink:#0e1712; --leaf-soft:#1f3a29; --card:#15231b; --surface2:#1c2e24; --line:#2a4234; --line-strong:#395946; --shadow:0 12px 32px rgba(0,0,0,0.34); --shadow-sm:0 2px 10px rgba(0,0,0,0.26); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); background-image:radial-gradient(680px 300px at 50% -60px, rgba(38,118,63,0.11), transparent 72%); color:var(--ink); font:16px/1.75 "Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; -webkit-font-smoothing:antialiased; }
+  :lang(ko) { word-break:keep-all; }
+  main { max-width:740px; margin:0 auto; padding:20px 18px 68px; }
+  .topnav { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin-bottom:26px; padding:6px 12px; background:var(--card); border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow-sm); font-size:13.5px; }
+  .topnav a { color:var(--muted); text-decoration:none; font-weight:700; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center; gap:6px; border-radius:999px; }
+  .topnav a:hover { color:var(--leaf); background:var(--leaf-soft); }
+  .topnav .home-link { color:var(--ink); }
+  .topnav .nav-links { display:flex; align-items:center; gap:2px; }
+  h1 { font-size:clamp(24px,4vw,30px); line-height:1.25; letter-spacing:-0.02em; margin:0 0 8px; }
+  h2 { font-size:20px; margin:34px 0 10px; color:var(--leaf); letter-spacing:-0.01em; }
+  h3 { font-size:16.5px; margin:22px 0 6px; color:var(--ink); }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 22px; line-height:1.65; }
+  section.card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:8px 24px 20px; margin:24px 0; box-shadow:var(--shadow); }
+  section.card h2 { margin-top:12px; }
+  ul, ol { padding-left:22px; } li { margin:5px 0; }
+  a { color:var(--leaf); font-weight:600; text-underline-offset:3px; }
+  p { margin:8px 0; }
+  code { background:var(--surface2); padding:2px 6px; border-radius:6px; font-size:14px; }
+  hr { border:none; border-top:1px solid var(--line); margin:36px 0 24px; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="topnav" aria-label="Navigation">
+    <a class="home-link" href="https://jpmajo2137-bot.github.io/?lang=fil">← WordGarden Home</a>
+    <span class="nav-links"><a href="../english/">Download</a><a href="../">Privacy</a></span>
+  </nav>
   <h1>🌱 Hardin ng Salita — Support / Tulong</h1>
   <p class="meta"><b>Hardin ng Salita: English</b> · <b>Hardin ng Salita: Korean</b> · From version 2.0, both are courses inside one app, <b>WordGarden (<span lang="ko">워드가든</span>)</b>: on the app's first screen, choose Tagalog as your language, then English or Korean. · <span lang="fil">Mula bersyon 2.0, ang dalawang ito ay mga kurso na sa loob ng iisang app, ang <b>WordGarden (<span lang="ko">워드가든</span>)</b>: sa unang screen ng app, piliin ang Tagalog bilang wika mo, tapos English o Korean.</span> · Android · iOS · Developer: Joung Hun Park</p>
   <section class="card">
@@ -33,6 +51,7 @@
   </section>
   <h2>FAQ</h2>
   <p><b>Do I need an account? · Kailangan ba ng account?</b><br>No. No account or login. · Hindi. Walang account o login.</p>
+  <p><b>How do I turn English explanations on or off? (v2.2) · Paano i-on o i-off ang Paliwanag sa English?</b><br>Go to <b>Settings → Paliwanag sa English</b> to switch simple English explanations on or off anytime. In the English course, later reviews also include questions where you read the English explanation and pick the word. · Pumunta sa <b>Settings → Paliwanag sa English</b> para i-on o i-off anumang oras.</p>
   <p><b>How do I change course? · Paano magpalit ng kurso?</b><br>Open <b>Settings</b> (the gear icon). The first row is <b>Kursong pinag-aaralan</b>: tap <b>Palitan</b> to open <b>Pumili ng kurso</b>. Your progress is kept for each course. · Buksan ang <b>Settings</b> (ang gear icon). Ang unang row ay <b>Kursong pinag-aaralan</b>: pindutin ang <b>Palitan</b> para buksan ang <b>Pumili ng kurso</b>. Ligtas ang progreso mo sa bawat kurso.</p>
   <p><b>Are there ads? · May ads ba?</b><br>To keep the app free, there is a small banner at the bottom of the main tabs and, at most twice a day, a full-screen ad after you finish a study session. There are never ads while you study. In the EEA, the UK and Switzerland a consent screen appears first, and you can change your choice any time in <b>Settings → Privacy ng ads</b>. In some US states, where that row appears, you can use it to opt out of personalized ads. The row appears only where it is needed. · Para manatiling libre, may maliit na banner sa ibaba ng mga tab at, hanggang 2 beses bawat araw, isang full-screen ad pagkatapos ng aralin. Walang ads habang nag-aaral. Sa EEA, UK at Switzerland, may consent screen sa simula, at mababago mo ito sa <b>Settings → Privacy ng ads</b>. Sa ilang estado sa US, kung makikita mo ang row na ito, doon ka puwedeng tumanggi sa personalized ads.</p>
   <p><b>Where is my progress saved? · Saan naka-save ang progreso ko?</b><br>Only on your phone. Before changing phones or uninstalling, use <b>Settings → I-export ang backup</b> to save a backup file or code, then <b>Mag-import ng backup</b> on the new phone. · Sa phone mo lang. Bago magpalit ng phone, gamitin ang <b>Settings → I-export ang backup</b>, at <b>Mag-import ng backup</b> sa bagong phone.</p>

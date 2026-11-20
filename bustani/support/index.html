@@ -10,18 +10,36 @@
 <link rel="icon" type="image/png" href="../app/icon.png">
 <link rel="apple-touch-icon" href="../app/icon.png">
 <style>
-  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --card:#fffdf7; --line:#e2dac3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --card:#15231b; --line:#2a4234; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:40px 20px 64px; }
-  h1 { font-size:28px; margin:0 0 4px; } h2 { font-size:19px; margin:32px 0 8px; color:var(--leaf); }
-  .meta { color:var(--muted); font-size:14px; margin:0 0 24px; }
-  section.card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:4px 22px 18px; margin-top:28px; }
-  a { color:var(--leaf); }
+  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#526155; --leaf:#26763f; --leaf-hover:#1d5d31; --leaf-ink:#fff; --leaf-soft:#dcefd9; --card:#fffdf7; --surface2:#efe9d8; --line:#e2dac3; --line-strong:#cfc4a6; --shadow:0 12px 32px rgba(31,43,34,0.07); --shadow-sm:0 2px 10px rgba(31,43,34,0.05); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#9eb5a3; --leaf:#7dd28a; --leaf-hover:#96dfa1; --leaf-ink:#0e1712; --leaf-soft:#1f3a29; --card:#15231b; --surface2:#1c2e24; --line:#2a4234; --line-strong:#395946; --shadow:0 12px 32px rgba(0,0,0,0.34); --shadow-sm:0 2px 10px rgba(0,0,0,0.26); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); background-image:radial-gradient(680px 300px at 50% -60px, rgba(38,118,63,0.11), transparent 72%); color:var(--ink); font:16px/1.75 "Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; -webkit-font-smoothing:antialiased; }
+  :lang(ko) { word-break:keep-all; }
+  main { max-width:740px; margin:0 auto; padding:20px 18px 68px; }
+  .topnav { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin-bottom:26px; padding:6px 12px; background:var(--card); border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow-sm); font-size:13.5px; }
+  .topnav a { color:var(--muted); text-decoration:none; font-weight:700; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center; gap:6px; border-radius:999px; }
+  .topnav a:hover { color:var(--leaf); background:var(--leaf-soft); }
+  .topnav .home-link { color:var(--ink); }
+  .topnav .nav-links { display:flex; align-items:center; gap:2px; }
+  h1 { font-size:clamp(24px,4vw,30px); line-height:1.25; letter-spacing:-0.02em; margin:0 0 8px; }
+  h2 { font-size:20px; margin:34px 0 10px; color:var(--leaf); letter-spacing:-0.01em; }
+  h3 { font-size:16.5px; margin:22px 0 6px; color:var(--ink); }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 22px; line-height:1.65; }
+  section.card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:8px 24px 20px; margin:24px 0; box-shadow:var(--shadow); }
+  section.card h2 { margin-top:12px; }
+  ul, ol { padding-left:22px; } li { margin:5px 0; }
+  a { color:var(--leaf); font-weight:600; text-underline-offset:3px; }
+  p { margin:8px 0; }
+  code { background:var(--surface2); padding:2px 6px; border-radius:6px; font-size:14px; }
+  hr { border:none; border-top:1px solid var(--line); margin:36px 0 24px; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="topnav" aria-label="Navigation">
+    <a class="home-link" href="https://jpmajo2137-bot.github.io/?lang=sw">← WordGarden</a>
+    <span class="nav-links"><a href="../app/">Pakua</a><a href="../">Faragha</a></span>
+  </nav>
   <h1>🌱 Bustani ya Maneno — Msaada / Support</h1>
   <p class="meta">Jifunze Kiingereza na Kikorea kwa Kiswahili · Learn English and Korean in Swahili (Android · iOS) · Kuanzia toleo 2.0 la WordGarden, Bustani ya Maneno ni sehemu ya programu ya <b>WordGarden (<span lang="ko">워드가든</span>)</b>: kwenye skrini ya kwanza ya programu, chagua Kiswahili kuwa lugha yako, kisha uchague Kiingereza au Kikorea. · <span lang="en">From WordGarden 2.0, Bustani ya Maneno is part of one app, <b>WordGarden (<span lang="ko">워드가든</span>)</b>: on the app's first screen, choose Kiswahili as your language, then English or Korean.</span></p>
   <section class="card">
@@ -33,6 +51,7 @@
   </section>
   <h2>Maswali ya mara kwa mara · FAQ</h2>
   <p><b>Je, ninahitaji akaunti? · Do I need an account?</b><br>Hapana. Hakuna akaunti wala kuingia. · No. No account or login.</p>
+  <p><b>Nitawashaje au kuzima Maelezo kwa Kiingereza? (v2.2) · How do I toggle English explanations?</b><br>Fungua <b>Mipangilio → Maelezo kwa Kiingereza</b> ili kuwasha au kuzima maelezo mafupi ya Kiingereza rahisi wakati wowote. · Open <b>Settings → Maelezo kwa Kiingereza</b> to switch simple English explanations on or off anytime.</p>
   <p><b>Nitabadilishaje lugha ninayojifunza? · How do I switch between English and Korean?</b><br>Gusa jina la lugha chini ya kichwa kwenye skrini kuu, au fungua <b>Mipangilio</b> (ikoni ya gia): mstari wa kwanza ni <b>Lugha unayojifunza</b>, na ukigusa <b>Badilisha</b> inafunguka <b>Chagua lugha ya kujifunza</b>. Maendeleo ya kila lugha huhifadhiwa kando. · Tap the language under the title on the home screen, or open <b>Settings</b> (the gear icon): the first row is <b>Lugha unayojifunza</b>, and <b>Badilisha</b> opens <b>Chagua lugha ya kujifunza</b>. Each language keeps its own progress.</p>
   <p><b>Je, kuna matangazo? · Are there ads?</b><br>Ili programu ibaki bure, kuna bango dogo chini ya vichupo vikuu, na tangazo la skrini nzima baada ya kumaliza somo, lisilozidi mara 2 kwa siku. Hakuna matangazo wakati unajifunza. · To keep the app free there is a small banner at the bottom of the main tabs and, at most twice a day, a full-screen ad after you finish a lesson. Never while you study.</p>
   <p><b>Maendeleo yangu yanahifadhiwa wapi? · Where is my progress saved?</b><br>Kwenye simu yako tu (programu huweka pia nakala ya kiotomatiki kwenye simu hiyo hiyo). Kabla ya kubadilisha simu, tumia <b>Mipangilio → Hifadhi nakala rudufu</b>. Kwenye simu mpya, fungua programu na uguse <b>«Nina nakala rudufu — rejesha maendeleo&nbsp;yangu»</b> kwenye skrini ya kwanza. · Only on your phone (the app also keeps an automatic copy on the same phone). Before changing phones, use Settings → <b>Hifadhi nakala rudufu</b>; on the new phone, open the app and tap <b>«Nina nakala rudufu — rejesha maendeleo&nbsp;yangu»</b> on the very first screen.</p>

@@ -11,19 +11,36 @@
 <link rel="apple-touch-icon" href="../app/icon.png">
 <meta name="apple-itunes-app" content="app-id=6825913827">
 <style>
-  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#5f6f63; --leaf:#26763f; --card:#fffdf7; --line:#e2dac3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#95ab9a; --leaf:#7dd28a; --card:#15231b; --line:#2a4234; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:720px; margin:0 auto; padding:40px 20px 64px; }
-  h1 { font-size:28px; margin:0 0 4px; } h2 { font-size:19px; margin:32px 0 8px; color:var(--leaf); }
-  .meta { color:var(--muted); font-size:14px; margin:0 0 24px; }
-  section.card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:4px 22px 18px; margin-top:28px; }
-  ul { padding-left:20px; } a { color:var(--leaf); }
-  :lang(ko) { word-break:keep-all; overflow-wrap:anywhere; }
+  :root { --bg:#f6f2e7; --ink:#1f2b22; --muted:#526155; --leaf:#26763f; --leaf-hover:#1d5d31; --leaf-ink:#fff; --leaf-soft:#dcefd9; --card:#fffdf7; --surface2:#efe9d8; --line:#e2dac3; --line-strong:#cfc4a6; --shadow:0 12px 32px rgba(31,43,34,0.07); --shadow-sm:0 2px 10px rgba(31,43,34,0.05); }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0e1712; --ink:#edf4ec; --muted:#9eb5a3; --leaf:#7dd28a; --leaf-hover:#96dfa1; --leaf-ink:#0e1712; --leaf-soft:#1f3a29; --card:#15231b; --surface2:#1c2e24; --line:#2a4234; --line-strong:#395946; --shadow:0 12px 32px rgba(0,0,0,0.34); --shadow-sm:0 2px 10px rgba(0,0,0,0.26); } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); background-image:radial-gradient(680px 300px at 50% -60px, rgba(38,118,63,0.11), transparent 72%); color:var(--ink); font:16px/1.75 "Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Segoe UI",Roboto,sans-serif; overflow-wrap:anywhere; -webkit-font-smoothing:antialiased; }
+  :lang(ko) { word-break:keep-all; }
+  main { max-width:740px; margin:0 auto; padding:20px 18px 68px; }
+  .topnav { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px; margin-bottom:26px; padding:6px 12px; background:var(--card); border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow-sm); font-size:13.5px; }
+  .topnav a { color:var(--muted); text-decoration:none; font-weight:700; padding:8px 12px; min-height:44px; display:inline-flex; align-items:center; gap:6px; border-radius:999px; }
+  .topnav a:hover { color:var(--leaf); background:var(--leaf-soft); }
+  .topnav .home-link { color:var(--ink); }
+  .topnav .nav-links { display:flex; align-items:center; gap:2px; }
+  h1 { font-size:clamp(24px,4vw,30px); line-height:1.25; letter-spacing:-0.02em; margin:0 0 8px; }
+  h2 { font-size:20px; margin:34px 0 10px; color:var(--leaf); letter-spacing:-0.01em; }
+  h3 { font-size:16.5px; margin:22px 0 6px; color:var(--ink); }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 22px; line-height:1.65; }
+  section.card { background:var(--card); border:1px solid var(--line); border-radius:22px; padding:8px 24px 20px; margin:24px 0; box-shadow:var(--shadow); }
+  section.card h2 { margin-top:12px; }
+  ul, ol { padding-left:22px; } li { margin:5px 0; }
+  a { color:var(--leaf); font-weight:600; text-underline-offset:3px; }
+  p { margin:8px 0; }
+  code { background:var(--surface2); padding:2px 6px; border-radius:6px; font-size:14px; }
+  hr { border:none; border-top:1px solid var(--line); margin:36px 0 24px; }
 </style>
 </head>
 <body>
 <main>
+  <nav class="topnav" aria-label="Navigation">
+    <a class="home-link" href="https://jpmajo2137-bot.github.io/?lang=ko">← 워드가든 홈</a>
+    <span class="nav-links"><a href="../app/">내려받기</a><a href="../">개인정보</a></span>
+  </nav>
   <h1>🌱 워드가든 고객 지원</h1>
   <p class="meta">워드가든 (WordGarden) · 스토어 이름 ‘워드가든: 영단어 암기·영어 단어 외우기’ (Android · iOS) · 개발자: 박종훈 (Joung Hun Park) · <a href="#en" lang="en">English</a></p>
   <section class="card">
@@ -35,6 +52,7 @@
   <p>버전 2.0부터 워드가든 앱 하나에 여러 과정이 들어 있어요. 이 페이지는 한국어 → 영어 과정을 안내해요. 다른 과정의 지원 페이지: <a href="../hardin/support/" lang="fil">Hardin ng Salita</a> · <a href="../bustani/support/" lang="sw">Bustani ya Maneno</a> · <a href="../vuontu/support/" lang="vi">Vườn Từ</a> · <a href="../korean/support/" lang="en">WordGarden: Korean</a></p>
   <h2>자주 묻는 질문</h2>
   <p><b>Q. 회원가입이 필요한가요?</b><br>아니요. 계정·로그인 없이 바로 쓸 수 있어요.</p>
+  <p><b>Q. 단어 아래의 영어 해설(EN ·)은 어떻게 켜거나 끄나요? (v2.2)</b><br><b>설정 → 영어 해설</b> 스위치를 켜거나 끌 수 있어요. 켜 두면 모든 영단어 아래 쉬운 영어 해설이 함께 나오고, 단어가 자란 뒤 복습에서는 영어 해설을 읽고 알맞은 단어를 고르는 문제도 나와요.</p>
   <p><b>Q. 다른 과정으로 바꾸려면 어떻게 하나요?</b><br><b>설정</b>(톱니바퀴 모양)을 열면 맨 위 줄이 <b>배우는 과정</b>이에요. 거기서 <b>바꾸기</b>를 누르면 <b>과정 고르기</b> 화면이 열려요. 학습 기록은 과정마다 따로 남아요.</p>
   <p><b>Q. 광고가 나오나요?</b><br>워드가든을 무료로 운영하기 위해 탭 화면 아래에 작은 배너가, 학습을 마치고 정원으로 돌아갈 때 가끔(하루 최대 2번) 전면 광고가 나와요. 학습하는 동안에는 광고가 나오지 않아요. 유럽 경제 지역·영국·스위스에서는 처음에 동의 화면이 나오고, <b>설정 → 광고 개인정보 설정</b>에서 언제든 다시 고를 수 있어요. 미국 일부 주에서는 이 줄이 보이면 여기서 맞춤 광고를 거부할 수 있어요. 이 줄은 필요한 지역에서만 보여요.</p>
   <p><b>Q. 내 학습 기록은 어디에 저장되나요?</b><br>내 기기에만 저장돼요. 기기를 바꾸거나 앱을 지우기 전에 <b>설정 → 백업 내보내기</b>로 백업 파일이나 백업 코드를 저장해 두고, 새 기기에서 <b>백업 불러오기</b>를 하면 그대로 이어서 공부할 수 있어요.</p>
