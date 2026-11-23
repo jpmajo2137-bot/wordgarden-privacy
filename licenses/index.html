@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<title>워드가든 — 오픈소스 라이선스 고지 (Open Source Licenses)</title>
-<meta name="description" content="워드가든(WordGarden) 앱에 사용된 오픈소스 소프트웨어의 저작권 및 라이선스 고지입니다. Open source software notices for WordGarden.">
+<title>워드가든 — 오픈소스 라이선스·SDK 고지 (Open Source Licenses)</title>
+<meta name="description" content="워드가든(WordGarden) 앱에 들어 있는 오픈소스 소프트웨어의 저작권·라이선스 고지와, 오픈소스가 아닌 Google SDK 안내입니다. Open source notices and third-party SDKs of WordGarden.">
 <link rel="canonical" href="https://wordgardenapp.com/wordgarden-privacy/licenses/">
 <link rel="icon" type="image/png" href="../app/icon.png">
 <link rel="apple-touch-icon" href="../app/icon.png">
@@ -34,6 +34,10 @@
   .lic-url { font-size:13px; margin:10px 0 6px; }
   pre { margin:8px 0 0; padding:12px; background:var(--surface2); border-radius:10px; font-size:12.5px; line-height:1.55; white-space:pre-wrap; word-break:break-word; overflow-x:auto; }
   ul { padding-left:20px; }
+  .lic-note { font-size:13.5px; color:var(--muted); margin:10px 0 0; }
+  .lib-list { font-size:14px; }
+  .lib-list li { margin:6px 0; }
+  code { font-size:13px; }
 </style>
 </head>
 <body>
@@ -43,21 +47,301 @@
     <span class="nav-links"><a href="../">개인정보처리방침</a><a href="../terms/">이용약관</a><a href="../support/">고객지원</a></span>
   </nav>
 
-  <h1>📜 오픈소스 라이선스 고지</h1>
-  <p class="meta">기준일: 2026년 11월 20일 · 앱: 워드가든 (WordGarden v2.2.1) · <a href="THIRD-PARTY-LICENSES.txt">전체 원문 텍스트(.txt) 보기</a></p>
+  <h1>📜 오픈소스 라이선스 및 SDK 고지</h1>
+  <p class="meta">기준일: 2026년 11월 23일 · 앱: 워드가든 (WordGarden v2.2.1, 빌드 18, Android·iOS) · <a href="THIRD-PARTY-LICENSES.txt">전체 원문 텍스트(.txt) 보기</a></p>
 
   <section class="card">
     <h2>요약 (Summary)</h2>
     <ul>
-      <li>워드가든 앱은 전량 상업적 이용 및 배포가 허용된 퍼미시브 오픈소스 라이브러리(<b>MIT, ISC, 0BSD, Apache-2.0</b>)만을 사용하며, 소스코드 공개 의무가 전염되는 라이선스(GPL, AGPL 등)나 비상업용 구성요소를 포함하지 않습니다.</li>
-      <li>글꼴(폰트)은 사용자의 운영체제 기본 시스템 글꼴을 사용하며 별도 유료·제한 글꼴 파일을 앱에 내장하지 않습니다. (웹·문서 스타일시트에 참조된 Pretendard 및 Noto Sans KR은 모두 상업적 이용이 자유로운 <b>SIL Open Font License 1.1</b> 글꼴입니다.)</li>
+      <li>워드가든 앱에 들어 있는 오픈소스 구성 요소와 데이터는 아래 1~4절에 적었습니다. 라이선스는 각 구성 요소의 패키지 정보(package.json, Maven POM)나 LICENSE 파일에 적힌 대로 옮겼고, 이 파일들로 확인할 수 없는 항목에는 라이선스 이름 대신 프로젝트 링크를 달았습니다. 확인한 라이선스 가운데 GPL·AGPL 같은 카피레프트 라이선스는 없습니다.</li>
+      <li>광고(Google Mobile Ads SDK), 광고 동의 화면(Google User Messaging Platform SDK), Android의 앱 평가 창(Google Play In-App Review)에 쓰는 Google SDK는 <b>오픈소스가 아니며</b> 각 SDK의 약관을 따릅니다(5절).</li>
+      <li>앱과 이 웹사이트는 기기에 있는 시스템 글꼴을 쓰며, 글꼴 파일을 넣거나 내려받지 않습니다.</li>
       <li>식물 성장 일러스트 및 앱 아이콘은 워드가든 자체 제작 벡터(SVG) 자산입니다.</li>
+      <li>앱을 만드는 데에만 쓰고 앱에는 들어 있지 않은 개발 도구는 6절에 따로 적었습니다.</li>
     </ul>
-    <p lang="en" style="font-size:14.5px;color:var(--muted)"><b>English:</b> WordGarden bundles only permissive open-source software (MIT, ISC, 0BSD, Apache-2.0) and contains zero copyleft (GPL/AGPL) or non-commercial assets. Tap any package below to view its full copyright notice and license text.</p>
+    <p lang="en" style="font-size:14.5px;color:var(--muted)"><b>English:</b> The open-source components and data inside the WordGarden app are listed in sections 1–4. Each license is given as stated in the component’s own package information (package.json, Maven POM) or LICENSE file; where those files do not settle it, the entry links to the project instead of naming a license. None of the licenses we could confirm is a copyleft license such as GPL or AGPL. The Google SDKs used for ads, the ad consent form and the rating prompt on Android are not open source and are used under their own terms (section 5). Build tools that are not part of the app are listed in section 6. Tap a package to see its copyright notice and license text.</p>
   </section>
 
-  <h2>1. 앱 런타임 오픈소스 패키지 (21개)</h2>
-  
+  <h2>1. 앱 화면 코드(JavaScript·CSS)에 들어 있는 오픈소스 (7개)</h2>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">react <small>v19.3.1</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
+        <pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">react-dom <small>v19.3.1</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
+        <pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">scheduler <small>v0.28.0</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
+        <pre>MIT License
+
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">@capacitor/core <small>v8.5.3</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://capacitorjs.com" rel="noopener">https://capacitorjs.com</a></p>
+        <pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">@capacitor/synapse <small>v1.0.4</small></span>
+        <span class="lic-badge">ISC · MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://www.npmjs.com/package/@capacitor/synapse" rel="noopener">https://www.npmjs.com/package/@capacitor/synapse</a></p>
+        <p class="lic-note">package.json에는 ISC로 적혀 있고, 패키지에 들어 있는 LICENSE.md는 아래의 MIT License 문구입니다. @capacitor/filesystem이 씁니다. <span lang="en">package.json says ISC; the LICENSE.md file in the package is the MIT License text below. Used by @capacitor/filesystem.</span></p>
+        <pre>MIT License
+
+Copyright (c) 2025 Ionic
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">tailwindcss <small>v4.3.3</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://tailwindcss.com" rel="noopener">https://tailwindcss.com</a></p>
+        <p class="lic-note">앱의 스타일시트(CSS)는 Tailwind CSS로 만들었고, Tailwind CSS가 만든 기본 스타일 코드가 앱에 들어 있습니다. <span lang="en">The app stylesheet is generated with Tailwind CSS and contains Tailwind CSS base style code.</span></p>
+        <pre>MIT License
+
+Copyright (c) Tailwind Labs, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">vite <small>v7.3.7</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://vite.dev" rel="noopener">https://vite.dev</a></p>
+        <p class="lic-note">Vite는 앱을 만드는 도구입니다. 앱의 화면 코드에는 Vite가 넣는 작은 보조 코드(모듈 미리 불러오기, modulepreload)만 들어 있습니다. <span lang="en">Vite is a build tool; the app code contains only a small helper that Vite adds (module preloading).</span></p>
+        <pre>Vite is released under the MIT license:
+
+MIT License
+
+Copyright (c) 2019-present, VoidZero Inc. and Vite contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+  <h2>2. Capacitor 런타임과 플러그인: 화면 코드와 Android·iOS 네이티브 코드 (13개)</h2>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">@capacitor/android <small>v8.5.3</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://capacitorjs.com" rel="noopener">https://capacitorjs.com</a></p>
+        <p class="lic-note">Android 앱의 Capacitor 런타임입니다. <span lang="en">Capacitor runtime of the Android app.</span></p>
+        <pre>MIT License
+
+Copyright (c) 2017-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">capacitor-swift-pm (Capacitor iOS) <small>v8.5.3</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://github.com/ionic-team/capacitor-swift-pm" rel="noopener">https://github.com/ionic-team/capacitor-swift-pm</a></p>
+        <p class="lic-note">iOS 앱의 Capacitor 런타임으로, Capacitor.xcframework와 Cordova.xcframework를 담고 있습니다. npm 패키지 @capacitor/ios는 iOS 앱에 컴파일되지 않습니다(6절). 이 LICENSE.md가 말하는 패키지 최상위의 NOTICE 파일은 패키지 안에 없습니다. Cordova 부분은 아래 Apache Cordova 항목을 보세요. <span lang="en">Capacitor runtime of the iOS app: Capacitor.xcframework and Cordova.xcframework. The npm package @capacitor/ios is not compiled into the app (section 6). The NOTICE file that this LICENSE.md refers to is not in the package. For the Cordova part see Apache Cordova below.</span></p>
+        <pre>The MIT License (MIT)
+
+Copyright (c) 2022-present Drifty Co.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Third-party components, software, and/or libraries (collectively, &quot;components&quot;) are included under the licenses specified by their authors. For information about these third-party licenses, refer to the separate legal notices governing such components at NOTICE file at the top level of the package.</pre>
+      </div>
+    </details>
+
     <details class="lic-item">
       <summary>
         <span class="pkg-name">@capacitor-community/admob <small>v8.2.1</small></span>
@@ -153,37 +437,6 @@ SOFTWARE.</pre>
 
     <details class="lic-item">
       <summary>
-        <span class="pkg-name">@capacitor/android <small>v8.5.3</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://capacitorjs.com" rel="noopener">https://capacitorjs.com</a></p>
-        <pre>MIT License
-
-Copyright (c) 2017-present Drifty Co.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
         <span class="pkg-name">@capacitor/app <small>v8.1.1</small></span>
         <span class="lic-badge">MIT</span>
       </summary>
@@ -217,37 +470,6 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
 
     <details class="lic-item">
       <summary>
-        <span class="pkg-name">@capacitor/core <small>v8.5.3</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://capacitorjs.com" rel="noopener">https://capacitorjs.com</a></p>
-        <pre>MIT License
-
-Copyright (c) 2017-present Drifty Co.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
         <span class="pkg-name">@capacitor/filesystem <small>v8.1.3</small></span>
         <span class="lic-badge">MIT</span>
       </summary>
@@ -256,37 +478,6 @@ SOFTWARE.</pre>
         <pre>MIT License
 
 Copyright (c) 2025 Ionic
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">@capacitor/ios <small>v8.5.3</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://capacitorjs.com" rel="noopener">https://capacitorjs.com</a></p>
-        <pre>MIT License
-
-Copyright (c) 2017-present Drifty Co.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the &quot;Software&quot;), to deal
@@ -409,11 +600,12 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
 
     <details class="lic-item">
       <summary>
-        <span class="pkg-name">@capacitor/synapse <small>v1.0.4</small></span>
-        <span class="lic-badge">ISC</span>
+        <span class="pkg-name">ion-ios-filesystem <small>v1.1.4</small></span>
+        <span class="lic-badge">MIT</span>
       </summary>
       <div class="lic-body">
-        
+        <p class="lic-url"><a href="https://github.com/ionic-team/ion-ios-filesystem" rel="noopener">https://github.com/ionic-team/ion-ios-filesystem</a></p>
+        <p class="lic-note">@capacitor/filesystem이 iOS에서 씁니다. <span lang="en">Used by @capacitor/filesystem on iOS.</span></p>
         <pre>MIT License
 
 Copyright (c) 2025 Ionic
@@ -440,282 +632,385 @@ SOFTWARE.</pre>
 
     <details class="lic-item">
       <summary>
-        <span class="pkg-name">@rdlabo/capacitor-docgen <small>v0.4.1</small></span>
-        <span class="lic-badge">MIT</span>
+        <span class="pkg-name">io.ionic.libs:ionfilesystem-android <small>v1.1.0</small></span>
+        <span class="lic-badge">프로젝트 참고 · see project</span>
       </summary>
       <div class="lic-body">
-        <p class="lic-url"><a href="https://capacitorjs.com/" rel="noopener">https://capacitorjs.com/</a></p>
-        <pre>Copyright 2015-present Drifty Co.
-http://drifty.com/
-
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining
-a copy of this software and associated documentation files (the
-&quot;Software&quot;), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to
-permit persons to whom the Software is furnished to do so, subject to
-the following conditions:
-
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
-LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
-OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
-WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
+        <p class="lic-url"><a href="https://github.com/ionic-team/ion-android-filesystem" rel="noopener">https://github.com/ionic-team/ion-android-filesystem</a></p>
+        <p class="lic-note">@capacitor/filesystem이 Android에서 씁니다. 이 라이브러리의 Maven POM은 라이선스 이름 없이 “License”라고만 적고 프로젝트의 LICENSE 파일로 연결하며, 라이브러리 안에는 라이선스 파일이 없습니다. 라이선스는 위 프로젝트에서 확인해 주세요. 아래는 POM에 적힌 내용 그대로입니다. <span lang="en">Used by @capacitor/filesystem on Android. Its Maven POM names no license, only “License”, and links to the project’s LICENSE file; the library itself contains no license file. Please see the project above for its license. Below is what the POM says, as written.</span></p>
+        <pre>&lt;license&gt;
+  &lt;name&gt;License&lt;/name&gt;
+  &lt;url&gt;https://github.com/ionic-team/ion-android-filesystem/blob/main/LICENSE&lt;/url&gt;
+&lt;/license&gt;</pre>
       </div>
     </details>
 
     <details class="lic-item">
       <summary>
-        <span class="pkg-name">colorette <small>v2.0.20</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://github.com/jorgebucaran/colorette" rel="noopener">https://github.com/jorgebucaran/colorette</a></p>
-        <pre>Copyright © Jorge Bucaran &lt;&lt;https://jorgebucaran.com&gt;&gt;
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">github-slugger <small>v1.5.0</small></span>
-        <span class="lic-badge">ISC</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://github.com/Flet/github-slugger" rel="noopener">https://github.com/Flet/github-slugger</a></p>
-        <pre>Copyright (c) 2015, Dan Flettre &lt;fletd01@yahoo.com&gt;
-
-Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">minimist <small>v1.2.8</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://github.com/minimistjs/minimist" rel="noopener">https://github.com/minimistjs/minimist</a></p>
-        <pre>This software is released under the MIT license:
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of
-this software and associated documentation files (the &quot;Software&quot;), to deal in
-the Software without restriction, including without limitation the rights to
-use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
-the Software, and to permit persons to whom the Software is furnished to do so,
-subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
-COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
-IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
-CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">react <small>v19.3.1</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
-        <pre>MIT License
-
-Copyright (c) Meta Platforms, Inc. and affiliates.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">react-dom <small>v19.3.1</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
-        <pre>MIT License
-
-Copyright (c) Meta Platforms, Inc. and affiliates.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">scheduler <small>v0.28.0</small></span>
-        <span class="lic-badge">MIT</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://react.dev/" rel="noopener">https://react.dev/</a></p>
-        <pre>MIT License
-
-Copyright (c) Meta Platforms, Inc. and affiliates.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the &quot;Software&quot;), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">tslib <small>v2.8.1</small></span>
-        <span class="lic-badge">0BSD</span>
-      </summary>
-      <div class="lic-body">
-        <p class="lic-url"><a href="https://www.typescriptlang.org/" rel="noopener">https://www.typescriptlang.org/</a></p>
-        <pre>Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot; AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.</pre>
-      </div>
-    </details>
-
-    <details class="lic-item">
-      <summary>
-        <span class="pkg-name">typescript <small>v5.9.3</small></span>
+        <span class="pkg-name">Apache Cordova <small>Android framework 14.0.1 · iOS (Capacitor)</small></span>
         <span class="lic-badge">Apache-2.0</span>
       </summary>
       <div class="lic-body">
-        <p class="lic-url"><a href="https://www.typescriptlang.org/" rel="noopener">https://www.typescriptlang.org/</a></p>
+        <p class="lic-url"><a href="https://cordova.apache.org" rel="noopener">https://cordova.apache.org</a></p>
+        <p class="lic-note">Android의 org.apache.cordova:framework 14.0.1(Maven POM: Apache License, Version 2.0)과 iOS의 Cordova.xcframework(capacitor-swift-pm 8.5.3 안; 헤더 파일에 Apache Software Foundation의 Apache License 2.0 표시)입니다. 배포된 라이브러리 안에는 NOTICE 파일이 없으며, 아래는 cordova-android 저장소(태그 rel/14.0.1)의 NOTICE 문구입니다. 라이선스 전문은 3절의 Apache License 2.0입니다. <span lang="en">Android org.apache.cordova:framework 14.0.1 (Maven POM: Apache License, Version 2.0) and the iOS Cordova.xcframework (inside capacitor-swift-pm 8.5.3; its header files carry Apache Software Foundation Apache License 2.0 headers). The shipped libraries contain no NOTICE file; below is the NOTICE text of the cordova-android repository (tag rel/14.0.1). The full license text is the Apache License 2.0 in section 3.</span></p>
+        <pre>Apache Cordova
+Copyright 2015-2020 The Apache Software Foundation
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).</pre>
+      </div>
+    </details>
+
+  <h2>3. Android 앱에 들어 있는 라이브러리</h2>
+  <section class="card">
+    <p>아래 라이브러리는 Android 앱(빌드 18)에 들어 있습니다. 라이선스는 각 라이브러리의 Maven POM에 적힌 대로이며, 따로 적은 것을 빼면 <b>Apache License 2.0</b>입니다. <span lang="en">These libraries are in the Android app (build 18). Their licenses are as stated in each library’s Maven POM: the Apache License 2.0 unless noted otherwise.</span></p>
+    <ul class="lib-list">
+      <li><b>AndroidX</b> (Android Open Source Project) — 56개, 아래 목록</li>
+      <li><code>com.google.errorprone: error_prone_annotations 2.11.0</code></li>
+      <li><code>com.google.guava: failureaccess 1.0.1 · guava 31.1-android · listenablefuture 9999.0-empty-to-avoid-conflict-with-guava</code></li>
+      <li><code>com.google.j2objc: j2objc-annotations 1.3</code></li>
+      <li><code>org.jetbrains: annotations 23.0.0</code></li>
+      <li><code>org.jetbrains.kotlin: kotlin-stdlib 2.2.20</code></li>
+      <li><code>org.jetbrains.kotlinx: kotlinx-coroutines-android, kotlinx-coroutines-bom, kotlinx-coroutines-core, kotlinx-coroutines-core-jvm 1.10.2</code></li>
+      <li><code>org.jspecify: jspecify 1.0.0</code></li>
+      <li><code>com.google.code.findbugs:jsr305 3.0.2</code> — Maven POM에는 “The Apache Software License, Version 2.0”이라고 적혀 있지만, Google SDK 안의 고지에는 BSD 계열 문구로 나옵니다. 프로젝트: <a href="https://findbugs.sourceforge.net/" rel="noopener">FindBugs</a>. <span lang="en">Its Maven POM says “The Apache Software License, Version 2.0”, while the notices inside Google’s SDKs show a BSD-style text for it. Project: FindBugs.</span></li>
+      <li><code>org.checkerframework:checker-qual 3.12.0</code> — <b>MIT License</b> (아래 원문)</li>
+    </ul>
+  </section>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">AndroidX <small>56개 라이브러리</small></span>
+        <span class="lic-badge">Apache-2.0</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://developer.android.com/jetpack/androidx" rel="noopener">https://developer.android.com/jetpack/androidx</a></p>
+        <pre>androidx.activity: activity, activity-ktx 1.11.0
+androidx.annotation: annotation, annotation-jvm 1.8.1 · annotation-experimental 1.4.1
+androidx.appcompat: appcompat, appcompat-resources 1.7.1
+androidx.arch.core: core-common, core-runtime 2.2.0
+androidx.browser: browser 1.8.0
+androidx.collection: collection, collection-jvm 1.4.2
+androidx.concurrent: concurrent-futures 1.1.0
+androidx.coordinatorlayout: coordinatorlayout 1.3.0
+androidx.core: core, core-ktx 1.17.0 · core-splashscreen 1.2.0 · core-viewtree 1.0.0
+androidx.cursoradapter: cursoradapter 1.0.0
+androidx.customview: customview 1.0.0
+androidx.datastore: datastore, datastore-core 1.0.0
+androidx.drawerlayout: drawerlayout 1.0.0
+androidx.emoji2: emoji2, emoji2-views-helper 1.3.0
+androidx.fragment: fragment 1.8.9
+androidx.interpolator: interpolator 1.0.0
+androidx.lifecycle: lifecycle-common, lifecycle-livedata, lifecycle-livedata-core, lifecycle-process, lifecycle-runtime, lifecycle-runtime-ktx, lifecycle-service, lifecycle-viewmodel, lifecycle-viewmodel-ktx, lifecycle-viewmodel-savedstate 2.6.2
+androidx.loader: loader 1.0.0
+androidx.privacysandbox.ads: ads-adservices, ads-adservices-java 1.0.0-beta05
+androidx.profileinstaller: profileinstaller 1.4.0
+androidx.resourceinspection: resourceinspection-annotation 1.0.1
+androidx.room: room-common, room-runtime 2.2.5
+androidx.savedstate: savedstate, savedstate-ktx 1.2.1
+androidx.sqlite: sqlite, sqlite-framework 2.1.0
+androidx.startup: startup-runtime 1.1.1
+androidx.tracing: tracing 1.2.0
+androidx.vectordrawable: vectordrawable, vectordrawable-animated 1.1.0
+androidx.versionedparcelable: versionedparcelable 1.1.1
+androidx.viewpager: viewpager 1.0.0
+androidx.webkit: webkit 1.14.0
+androidx.work: work-runtime 2.7.0</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">Checker Framework qualifiers <small>v3.12.0</small></span>
+        <span class="lic-badge">MIT</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://checkerframework.org" rel="noopener">https://checkerframework.org</a></p>
+        <pre>Checker Framework qualifiers
+Copyright 2004-present by the Checker Framework developers
+
+MIT License:
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the &quot;Software&quot;), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</pre>
+      </div>
+    </details>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">Apache License 2.0 전문 <small>Apache License, Version 2.0</small></span>
+        <span class="lic-badge">Apache-2.0</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">https://www.apache.org/licenses/LICENSE-2.0</a></p>
         <pre>Apache License
-
-Version 2.0, January 2004
-
-http://www.apache.org/licenses/ 
+                        Version 2.0, January 2004
+                     http://www.apache.org/licenses/
 
 TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
 
 1. Definitions.
 
-&quot;License&quot; shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.
+   &quot;License&quot; shall mean the terms and conditions for use, reproduction,
+   and distribution as defined by Sections 1 through 9 of this document.
 
-&quot;Licensor&quot; shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.
+   &quot;Licensor&quot; shall mean the copyright owner or entity authorized by
+   the copyright owner that is granting the License.
 
-&quot;Legal Entity&quot; shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, &quot;control&quot; means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.
+   &quot;Legal Entity&quot; shall mean the union of the acting entity and all
+   other entities that control, are controlled by, or are under common
+   control with that entity. For the purposes of this definition,
+   &quot;control&quot; means (i) the power, direct or indirect, to cause the
+   direction or management of such entity, whether by contract or
+   otherwise, or (ii) ownership of fifty percent (50%) or more of the
+   outstanding shares, or (iii) beneficial ownership of such entity.
 
-&quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity exercising permissions granted by this License.
+   &quot;You&quot; (or &quot;Your&quot;) shall mean an individual or Legal Entity
+   exercising permissions granted by this License.
 
-&quot;Source&quot; form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.
+   &quot;Source&quot; form shall mean the preferred form for making modifications,
+   including but not limited to software source code, documentation
+   source, and configuration files.
 
-&quot;Object&quot; form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.
+   &quot;Object&quot; form shall mean any form resulting from mechanical
+   transformation or translation of a Source form, including but
+   not limited to compiled object code, generated documentation,
+   and conversions to other media types.
 
-&quot;Work&quot; shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).
+   &quot;Work&quot; shall mean the work of authorship, whether in Source or
+   Object form, made available under the License, as indicated by a
+   copyright notice that is included in or attached to the work
+   (an example is provided in the Appendix below).
 
-&quot;Derivative Works&quot; shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.
+   &quot;Derivative Works&quot; shall mean any work, whether in Source or Object
+   form, that is based on (or derived from) the Work and for which the
+   editorial revisions, annotations, elaborations, or other modifications
+   represent, as a whole, an original work of authorship. For the purposes
+   of this License, Derivative Works shall not include works that remain
+   separable from, or merely link (or bind by name) to the interfaces of,
+   the Work and Derivative Works thereof.
 
-&quot;Contribution&quot; shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, &quot;submitted&quot; means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as &quot;Not a Contribution.&quot;
+   &quot;Contribution&quot; shall mean any work of authorship, including
+   the original version of the Work and any modifications or additions
+   to that Work or Derivative Works thereof, that is intentionally
+   submitted to Licensor for inclusion in the Work by the copyright owner
+   or by an individual or Legal Entity authorized to submit on behalf of
+   the copyright owner. For the purposes of this definition, &quot;submitted&quot;
+   means any form of electronic, verbal, or written communication sent
+   to the Licensor or its representatives, including but not limited to
+   communication on electronic mailing lists, source code control systems,
+   and issue tracking systems that are managed by, or on behalf of, the
+   Licensor for the purpose of discussing and improving the Work, but
+   excluding communication that is conspicuously marked or otherwise
+   designated in writing by the copyright owner as &quot;Not a Contribution.&quot;
 
-&quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.
+   &quot;Contributor&quot; shall mean Licensor and any individual or Legal Entity
+   on behalf of whom a Contribution has been received by Licensor and
+   subsequently incorporated within the Work.
 
-2. Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.
+2. Grant of Copyright License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   copyright license to reproduce, prepare Derivative Works of,
+   publicly display, publicly perform, sublicense, and distribute the
+   Work and such Derivative Works in Source or Object form.
 
-3. Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.
+3. Grant of Patent License. Subject to the terms and conditions of
+   this License, each Contributor hereby grants to You a perpetual,
+   worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+   (except as stated in this section) patent license to make, have made,
+   use, offer to sell, sell, import, and otherwise transfer the Work,
+   where such license applies only to those patent claims licensable
+   by such Contributor that are necessarily infringed by their
+   Contribution(s) alone or by combination of their Contribution(s)
+   with the Work to which such Contribution(s) was submitted. If You
+   institute patent litigation against any entity (including a
+   cross-claim or counterclaim in a lawsuit) alleging that the Work
+   or a Contribution incorporated within the Work constitutes direct
+   or contributory patent infringement, then any patent licenses
+   granted to You under this License for that Work shall terminate
+   as of the date such litigation is filed.
 
-4. Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:
+4. Redistribution. You may reproduce and distribute copies of the
+   Work or Derivative Works thereof in any medium, with or without
+   modifications, and in Source or Object form, provided that You
+   meet the following conditions:
 
-You must give any other recipients of the Work or Derivative Works a copy of this License; and
+   (a) You must give any other recipients of the Work or
+       Derivative Works a copy of this License; and
 
-You must cause any modified files to carry prominent notices stating that You changed the files; and
+   (b) You must cause any modified files to carry prominent notices
+       stating that You changed the files; and
 
-You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
+   (c) You must retain, in the Source form of any Derivative Works
+       that You distribute, all copyright, patent, trademark, and
+       attribution notices from the Source form of the Work,
+       excluding those notices that do not pertain to any part of
+       the Derivative Works; and
 
-If the Work includes a &quot;NOTICE&quot; text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License. You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
+   (d) If the Work includes a &quot;NOTICE&quot; text file as part of its
+       distribution, then any Derivative Works that You distribute must
+       include a readable copy of the attribution notices contained
+       within such NOTICE file, excluding those notices that do not
+       pertain to any part of the Derivative Works, in at least one
+       of the following places: within a NOTICE text file distributed
+       as part of the Derivative Works; within the Source form or
+       documentation, if provided along with the Derivative Works; or,
+       within a display generated by the Derivative Works, if and
+       wherever such third-party notices normally appear. The contents
+       of the NOTICE file are for informational purposes only and
+       do not modify the License. You may add Your own attribution
+       notices within Derivative Works that You distribute, alongside
+       or as an addendum to the NOTICE text from the Work, provided
+       that such additional attribution notices cannot be construed
+       as modifying the License.
 
-5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.
+   You may add Your own copyright statement to Your modifications and
+   may provide additional or different license terms and conditions
+   for use, reproduction, or distribution of Your modifications, or
+   for any such Derivative Works as a whole, provided Your use,
+   reproduction, and distribution of the Work otherwise complies with
+   the conditions stated in this License.
 
-6. Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.
+5. Submission of Contributions. Unless You explicitly state otherwise,
+   any Contribution intentionally submitted for inclusion in the Work
+   by You to the Licensor shall be under the terms and conditions of
+   this License, without any additional terms or conditions.
+   Notwithstanding the above, nothing herein shall supersede or modify
+   the terms of any separate license agreement you may have executed
+   with Licensor regarding such Contributions.
 
-7. Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.
+6. Trademarks. This License does not grant permission to use the trade
+   names, trademarks, service marks, or product names of the Licensor,
+   except as required for reasonable and customary use in describing the
+   origin of the Work and reproducing the content of the NOTICE file.
 
-8. Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.
+7. Disclaimer of Warranty. Unless required by applicable law or
+   agreed to in writing, Licensor provides the Work (and each
+   Contributor provides its Contributions) on an &quot;AS IS&quot; BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+   implied, including, without limitation, any warranties or conditions
+   of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+   PARTICULAR PURPOSE. You are solely responsible for determining the
+   appropriateness of using or redistributing the Work and assume any
+   risks associated with Your exercise of permissions under this License.
 
-9. Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.
+8. Limitation of Liability. In no event and under no legal theory,
+   whether in tort (including negligence), contract, or otherwise,
+   unless required by applicable law (such as deliberate and grossly
+   negligent acts) or agreed to in writing, shall any Contributor be
+   liable to You for damages, including any direct, indirect, special,
+   incidental, or consequential damages of any character arising as a
+   result of this License or out of the use or inability to use the
+   Work (including but not limited to damages for loss of goodwill,
+   work stoppage, computer failure or malfunction, or any and all
+   other commercial damages or losses), even if such Contributor
+   has been advised of the possibility of such damages.
+
+9. Accepting Warranty or Additional Liability. While redistributing
+   the Work or Derivative Works thereof, You may choose to offer,
+   and charge a fee for, acceptance of support, warranty, indemnity,
+   or other liability obligations and/or rights consistent with this
+   License. However, in accepting such obligations, You may act only
+   on Your own behalf and on Your sole responsibility, not on behalf
+   of any other Contributor, and only if You agree to indemnify,
+   defend, and hold each Contributor harmless for any liability
+   incurred by, or claims asserted against, such Contributor by reason
+   of your accepting any such warranty or additional liability.
 
 END OF TERMS AND CONDITIONS</pre>
       </div>
     </details>
 
-  <h2>2. Android 네이티브 지원 라이브러리 및 플랫폼 SDK</h2>
+  <h2>4. 데이터</h2>
+
+    <details class="lic-item">
+      <summary>
+        <span class="pkg-name">CMU Pronouncing Dictionary <small>1993-2015</small></span>
+        <span class="lic-badge">BSD-style</span>
+      </summary>
+      <div class="lic-body">
+        <p class="lic-url"><a href="https://github.com/cmusphinx/cmudict" rel="noopener">https://github.com/cmusphinx/cmudict</a></p>
+        <p class="lic-note">Vườn Từ: Tiếng Anh(베트남어 → 영어) 과정의 미국식 발음 기호는 CMU Pronouncing Dictionary와 대조해 확인했습니다. 앱의 이 과정 설정에도 같은 사용 허가 글이 있습니다. 아래 글은 앱에 들어 있는 글 그대로입니다. <span lang="en">In the Vườn Từ: Tiếng Anh course (Vietnamese → English), American pronunciations were checked against the CMU Pronouncing Dictionary; the same license text is shown in that course’s settings. The text below is the one in the app.</span></p>
+        <pre>CMU Pronouncing Dictionary
+
+Copyright (C) 1993-2015 Carnegie Mellon University. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions
+are met:
+
+1. Redistributions of source code must retain the above copyright
+   notice, this list of conditions and the following disclaimer.
+   The contents of this file are deemed to be source code.
+
+2. Redistributions in binary form must reproduce the above copyright
+   notice, this list of conditions and the following disclaimer in
+   the documentation and/or other materials provided with the
+   distribution.
+
+This work was supported in part by funding from the Defense Advanced
+Research Projects Agency, the Office of Naval Research and the National
+Science Foundation of the United States of America, and by member
+companies of the Carnegie Mellon Sphinx Speech Consortium. We acknowledge
+the contributions of many volunteers to the expansion and improvement of
+this dictionary.
+
+THIS SOFTWARE IS PROVIDED BY CARNEGIE MELLON UNIVERSITY ``AS IS&#x27;&#x27; AND
+ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL CARNEGIE MELLON UNIVERSITY
+NOR ITS EMPLOYEES BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</pre>
+      </div>
+    </details>
+
+  <h2>5. 오픈소스가 아닌 SDK (각 SDK의 약관 적용)</h2>
   <section class="card">
-    <ul>
-      <li><b>AndroidX Libraries</b> (<code>androidx.appcompat</code>, <code>androidx.coordinatorlayout</code>, <code>androidx.core:core-splashscreen</code>) — Copyright © The Android Open Source Project · Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" rel="noopener">Apache License, Version 2.0</a>.</li>
-      <li><b>Google Mobile Ads SDK &amp; User Messaging Platform (UMP) SDK</b> — Copyright © Google LLC · Governed by the <a href="https://developers.google.com/terms" rel="noopener">Google APIs / Google Mobile Ads SDK Terms of Service</a>.</li>
+    <ul class="lib-list">
+      <li><b>Google Mobile Ads SDK</b> — Android 25.4.0 (com.google.android.gms:play-services-ads) · iOS 13.11.0 — Google LLC, 오픈소스 아님. 광고를 보여 주는 데 씁니다. <span lang="en">Android 25.4.0 (com.google.android.gms:play-services-ads) · iOS 13.11.0 — Google LLC, not open source. Shows the ads.</span><br><a href="https://developers.google.com/admob/android/terms" rel="noopener">Google Mobile Ads SDK 약관 (Android)</a> · <a href="https://developers.google.com/admob/ios/terms" rel="noopener">Google Mobile Ads SDK 약관 (iOS)</a> · <a href="https://developer.android.com/studio/terms" rel="noopener">Android Software Development Kit License</a></li>
+      <li><b>Google User Messaging Platform (UMP) SDK</b> — Android 4.0.0 (com.google.android.ump:user-messaging-platform) · iOS 3.1.0 — Google LLC, 오픈소스 아님. 광고 동의·개인정보 선택 화면에 씁니다. <span lang="en">Android 4.0.0 (com.google.android.ump:user-messaging-platform) · iOS 3.1.0 — Google LLC, not open source. Shows the ad consent and privacy choices form.</span><br><a href="https://developer.android.com/studio/terms" rel="noopener">Android Software Development Kit License</a> · <a href="https://developers.google.com/admob/android/privacy" rel="noopener">UMP SDK 안내 (Android)</a> · <a href="https://developers.google.com/admob/ios/privacy" rel="noopener">UMP SDK 안내 (iOS)</a></li>
+      <li><b>Google Play In-App Review (Android)</b> — com.google.android.play:review 2.0.2 · core-common 2.0.4 — Google LLC, 오픈소스 아님. Android에서 앱 평가 창을 띄우는 데 씁니다(iOS는 iOS에 들어 있는 Apple StoreKit을 씁니다). <span lang="en">com.google.android.play:review 2.0.2 · core-common 2.0.4 — Google LLC, not open source. Opens the rating prompt on Android (on iOS the app uses Apple StoreKit, part of iOS).</span><br><a href="https://developer.android.com/guide/playcore#license" rel="noopener">Play Core Software Development Kit Terms of Service</a></li>
+      <li><b>Android에 함께 들어 있는 그 밖의 Google 라이브러리</b> — <code>com.google.android.gms:play-services-ads-api 25.4.0, com.google.android.gms:play-services-ads-identifier 18.0.0, com.google.android.gms:play-services-appset 16.0.1, com.google.android.gms:play-services-base 18.0.0, com.google.android.gms:play-services-basement 18.9.0, com.google.android.gms:play-services-measurement-base 20.1.2, com.google.android.gms:play-services-measurement-sdk-api 20.1.2, com.google.android.gms:play-services-tasks 18.2.0, com.google.android.play:hsdp 2.0.1</code> — Maven POM 기준 Android Software Development Kit License. <span lang="en">Other Google libraries in the Android app; Android Software Development Kit License per their Maven POMs.</span></li>
+    </ul>
+    <p>Google의 Android SDK 패키지에는 그 안에 들어 있는 제3자 구성 요소의 고지가 따로 들어 있습니다(패키지 안의 third_party_licenses 파일). 이 페이지에는 옮기지 않았습니다. <span lang="en">Google’s Android SDK packages carry their own notices for the third-party components inside them (third_party_licenses files in the packages); they are not repeated on this page.</span></p>
+  </section>
+
+  <h2>6. 앱에 들어 있지 않은 개발 도구 (참고)</h2>
+  <section class="card">
+    <p>아래 도구와 패키지는 앱을 만들 때만 쓰거나 다른 패키지와 함께 설치될 뿐, 앱에는 들어 있지 않습니다(Vite는 1절의 작은 보조 코드만 예외). <span lang="en">Used only to build the app or installed alongside other packages; not part of the app (except the small Vite helper in section 1).</span></p>
+    <ul class="lib-list">
+      <li><code>typescript</code> 5.9.3 — Apache-2.0</li>
+      <li><code>vite</code> 7.3.7 — MIT</li>
+      <li><code>@vitejs/plugin-react</code> 5.2.0 — MIT</li>
+      <li><code>@tailwindcss/vite</code> 4.3.3 — MIT</li>
+      <li><code>@capacitor/cli</code> 8.5.3 — MIT</li>
+      <li><code>tslib</code> 2.8.1 — 0BSD</li>
+      <li><code>@rdlabo/capacitor-docgen</code> 0.4.1 — MIT</li>
+      <li><code>colorette</code> 2.0.20 — MIT</li>
+      <li><code>github-slugger</code> 1.5.0 — ISC</li>
+      <li><code>minimist</code> 1.2.8 — MIT</li>
+      <li><code>@capacitor/ios</code> 8.5.3 — MIT: 설치는 되지만 iOS 앱에는 컴파일되지 않습니다(iOS 앱은 2절의 capacitor-swift-pm을 씁니다). <span lang="en">Installed but not compiled into the iOS app, which uses capacitor-swift-pm (section 2).</span></li>
     </ul>
   </section>
 

@@ -1,8 +1,7 @@
 {
-  "group": null,
+  "active": true,
+  "group": "https://groups.google.com/g/wordgarden-beta-testers",
   "apps": {
-    "com.wordgarden.app": "closed",
-    "com.wordgarden.tl.english": "closed",
-    "com.wordgarden.tl.korean": "closed"
+    "com.wordgarden.app": "beta"
   }
 }
